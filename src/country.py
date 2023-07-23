@@ -204,10 +204,10 @@ class Country:
 
         '''
         if cols is None:
-            return self.make_table_from_dict_field('name')
+            table = self.make_table_from_dict_field('name')
         if isinstance(cols, str):
             cols = [cols]
-        table =  self.make_table_from_dict_field('name')[cols]
+            table =  self.make_table_from_dict_field('name')[cols]
         return (table
                     .rename(
                         dict(zip(table.columns, [f'{i}_name' for i in table.columns])),
