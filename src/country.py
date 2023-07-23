@@ -5,38 +5,21 @@ def key_error_decorator(function):
     '''this decorator catches KeyError when parsing, e.g. countries that are islands do not have borders'''
     def wrapper(*args, **kwargs):
         try: 
-            func = function(*args, **kwargs)
-            return func
+            return function(*args, **kwargs)
         except KeyError as err:
             return pd.DataFrame()
     return wrapper
             
 
+# TODO: colocar nome dos atributos, ou seja, explique todas as tabelas
 
 class Country:
     '''
     en: a base class to parse a country dictionary of countries api
     pt: uma classe base para analisar um dicionário recebido da countries api
 
-    Attributes
-    ----------
-    fields_to_parse : list[str]
-        name of keys in dictionary to be parsed
-
-    name_table : pd.DataFrame
-        table containing common and official names of country
-
-    lang_table : pd.DataFrame
-        table containing official languages of country
-
-
 
     '''
-    fields_to_parse: list = ['name', 'independent', 'unMember', 'currencies', 'capital', 'region',
-                             'subregion', 'languages', 'translations', 'latlng', 'landlocked', 'borders', 'area',
-                             'demonyms', 'flag', 'maps', 'population', 'gini', 'car', 'timezones', 'continents', 'flags',
-                             'startOfWeek', 'capitalInfo', 'postalCode', 'coatOfArms']
-    
     def __repr__(self):
         return f'Country ({self.common_name})'
 
