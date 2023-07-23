@@ -69,7 +69,7 @@ class Country:
         self.gini_index = self.make_key_value_table_from_dict('gini', ['year', 'index'])
         self.car_information = self.create_car_information_table()
         self.timezones = self.make_table_from_list('timezones')
-        self.continents = self.make_table_from_list('timezones')
+        self.continents = self.make_table_from_list('continents')
         self.flags = self.make_key_value_table_from_dict('flags', ['image_format', 'link'])
         self.coat_of_arms = self.make_key_value_table_from_dict('coatOfArms', ['image_format', 'link'])
         self.postal_codes = self.make_table_from_dict_field('postalCode')

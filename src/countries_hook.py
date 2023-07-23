@@ -1,5 +1,6 @@
 import requests
 import json
+import pandas as pd
 from src.country import Country
 
 
@@ -89,4 +90,8 @@ class CountriesHook:
     
     def parse_countries(self):
         self.countries = [Country(i) for i in self.raw_data]
+    
+    def parse_tables(self):
+        for table in self.tables:
+            setattr(self, table, pd.concat([getattr(country, table) for country in self.countries]))
        
