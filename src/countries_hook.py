@@ -36,7 +36,21 @@ class CountriesHook:
 
         returns a dict with all matched countries and respective indexes
 
+    parse_countries -> None 
+        Instantiate a list of Country objects from raw data json file
 
+    parse_tables -> None
+        Concat every table from the Country objects contained in country hook.
+
+    save_table -> None
+        save parsed tables to a format available for saving in pd.DataFrame
+
+    parameters
+        format:str
+            format to save tables
+
+    raises AttributeError
+        raised if format is not supported for pd.DataFrame   
 
     '''
     raw_data: list[dict]
@@ -60,8 +74,7 @@ class CountriesHook:
 
     def get_countries(self) -> list[dict]:
         '''
-        en : Returns a list of dicts with all countries listed in rest_countries api
-        pt_br: Retorna um lista de dicionários com todos os países listados na api rest_countries
+        Returns a list of dicts with all countries listed in rest_countries api
         '''
         URL = 'https://restcountries.com/v3.1/all'
         self.raw_data = requests.get(url=URL).json()
@@ -91,18 +104,25 @@ class CountriesHook:
     def parse_countries(self):
         '''Instantiate countries contained in raw json file'''
         self.countries = [Country(i) for i in self.raw_data]
+        return self
     
     def parse_tables(self):
         '''Concats every table from every country parsed'''
         for table in self.tables:
-            setattr(self, table, pd.concat([getattr(country, table) for country in self.countries]))
+            setattr(self, table, pd.concat([getattr(country, table) for country in self.countries], ignore_index=True))
+        return self
 
     def save_tables(self, format:str):
-
+        '''save parsed tables to a format available for saving in pd.DataFrame'''
         for table in self.tables:
             df = getattr(self, table)
             try:
-                save_method = getattr(df, 'to_{format}')
-                save_method(f'{table}.{format}')
+                if format == 'xlsx': 
+                    save_method = getattr(df, 'to_excel') 
+                    save_method(f'data/{table}.xlsx')
+                else:
+                    save_method = getattr(df, f'to_{format}') 
+                    save_method(f'data/{table}.{format}')
             except AttributeError:
                 raise AttributeError(f"to_{format} not implemented for pandas.DataFrame")
+        return self

@@ -202,7 +202,7 @@ class Country:
     def create_native_names_table(self):
         native_names = self.country_dict['name']['nativeName']
         return (self.create_name_table('common')
-                    .merge(pd.concat([self.make_table_from_dict_and_keep_key(native_names, i, 'language_code') for i in native_names]),
+                    .merge(pd.concat([self.make_table_from_dict_and_keep_key(native_names, i, 'language_code') for i in native_names], ignore_index=True),
                         how='cross'
                         )
                 )
@@ -361,7 +361,3 @@ class Country:
         coordinates = self.country_dict['capitalInfo']['latlng']
         table = pd.DataFrame({'latitude':[coordinates[0]], 'longitude':[coordinates[1]]})
         return capital.merge(table, how='cross')
-
-        
-
-        
