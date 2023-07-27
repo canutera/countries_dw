@@ -89,9 +89,20 @@ class CountriesHook:
         return {i: names.index(i) for i in filtered_values}
     
     def parse_countries(self):
+        '''Instantiate countries contained in raw json file'''
         self.countries = [Country(i) for i in self.raw_data]
     
     def parse_tables(self):
+        '''Concats every table from every country parsed'''
         for table in self.tables:
             setattr(self, table, pd.concat([getattr(country, table) for country in self.countries]))
-       
+
+    def save_tables(self, format:str):
+
+        for table in self.tables:
+            df = getattr(self, table)
+            try:
+                save_method = getattr(df, 'to_{format}')
+                save_method(f'{table}.{format}')
+            except AttributeError:
+                raise AttributeError(f"to_{format} not implemented for pandas.DataFrame")

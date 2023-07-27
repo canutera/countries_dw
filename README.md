@@ -8,8 +8,8 @@ Data from all countries are recieved as a list of dictionaries in a json respons
 [Country class](https://github.com/canutera/countries_dw/blob/master/src/country.py) is responsible for parsing and assembling tables for
 each country contained in the response.
 
-[CountriesHook](https://github.com/canutera/countries_dw/blob/master/src/countries_hook.py) makes the request at [All countries endpoint]('https://restcountries.com/v3.1/all')
-and save a json file with information. Then parses and concatenates information from every country to save at [data folder]
+[CountriesHook](https://github.com/canutera/countries_dw/blob/master/src/countries_hook.py) makes the request at [All countries endpoint](https://restcountries.com/v3.1/all)
+and save a json file with information. Then parses and concatenates information from every country to save all tables at the [data folder](https://github.com/canutera/countries_dw/tree/master/data).
 
 
 
