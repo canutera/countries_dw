@@ -65,6 +65,9 @@ class CountriesHook:
             self.load_from_json()
         except FileNotFoundError:
             self.get_countries()
+        
+    def __repr__(self) -> str:
+        return f'Countries hook: tables parsed ({"yes" if hasattr(self, "names") else "no"})'
 
     def load_from_json(self) -> None:
         '''Attempts to load countries from a json file'''
