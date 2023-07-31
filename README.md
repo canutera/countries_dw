@@ -57,7 +57,7 @@ hook = (CountriesHook()
             .save_tables(file_format, index=False)
         )
 ```
-If you run the following code in a Jupyter Notebook, make you are connected to the created virtual environment for this project.
+If you run the following code in a Jupyter Notebook, make sure you are connected to the created virtual environment for this project.
 After running the code above, all tables should appear in the data folder. Just make sure, a valid format was passed.
 You can check [pandas.DataFrame Documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to look for valid formats.
 
