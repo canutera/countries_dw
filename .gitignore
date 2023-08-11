@@ -5,5 +5,5 @@ data/*
 src/__pycache__
 src/parser/__pycache__
 src/hook/__pycache__
-src/logs
+src/logs/*
 src/logs/dbt.log
