@@ -1,4 +1,4 @@
-from src.countries_hook import CountriesHook
+from hook.countries_hook import CountriesHook
 file_format = 'parquet'
 (CountriesHook()
     .parse_countries()

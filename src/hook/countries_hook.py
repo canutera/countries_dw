@@ -1,7 +1,7 @@
 import requests
 import json
 import pandas as pd
-from src.country import Country
+from parser.country import Country
 
 
 class CountriesHook:
