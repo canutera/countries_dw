@@ -3,5 +3,5 @@ data/*
 .vscode
 .venv
 src/__pycache__
-parser/__pycache__
-hook/__pycache__
+src/parser/__pycache__
+src/hook/__pycache__
