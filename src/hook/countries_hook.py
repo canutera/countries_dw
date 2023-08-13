@@ -115,13 +115,24 @@ class CountriesHook:
             setattr(self, table, pd.concat([getattr(country, table) for country in self.countries], ignore_index=True))
         return self
 
-    def save_tables(self, format:str, path:str=None, **save_kwargs):
-        '''save parsed tables to a format available for saving in pd.DataFrame'''
+    def save_tables(self, format:str, destination:str=None, **save_kwargs):
+        '''save parsed tables to a format available for saving in pd.DataFrame
+        
+        Parameters
+        ----------
+        format: str
+            Format for saving files in specific path
+        destination: str
+            Destination path for files. If path is None, it will be saved in data folder at root of this project
+        **save_kwargs
+            Any other kwarg used in pandas method for saving files
+
+        '''
         for table in self.tables:
-            if not path: 
+            if not destination: 
                 path = join('data', f'{table}.{format}')
             else:
-                path = join(path, f'{table}.{format}')
+                path = join(destination, f'{table}.{format}')
 
             df = getattr(self, table)
             try:
