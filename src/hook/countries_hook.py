@@ -2,7 +2,7 @@ import requests
 import json
 import pandas as pd
 from parser.country import Country
-
+from os.path import join 
 
 class CountriesHook:
     '''
@@ -115,17 +115,22 @@ class CountriesHook:
             setattr(self, table, pd.concat([getattr(country, table) for country in self.countries], ignore_index=True))
         return self
 
-    def save_tables(self, format:str, **save_kwargs):
+    def save_tables(self, format:str, path:str=None, **save_kwargs):
         '''save parsed tables to a format available for saving in pd.DataFrame'''
         for table in self.tables:
+            if not path: 
+                path = join('data', f'{table}.{format}')
+            else:
+                path = join(path, f'{table}.{format}')
+
             df = getattr(self, table)
             try:
                 if format in ['xlsx', 'xls', 'xlsm']: 
                     save_method = getattr(df, 'to_excel') 
-                    save_method(f'data/{table}.xlsx', **save_kwargs)
+                    save_method(path, **save_kwargs)
                 else:
                     save_method = getattr(df, f'to_{format}') 
-                    save_method(f'data/{table}.{format}', **save_kwargs)
+                    save_method(path, **save_kwargs)
             except AttributeError:
                 raise AttributeError(f"to_{format} not implemented for pandas.DataFrame")
         return self
