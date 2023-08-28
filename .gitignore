@@ -7,3 +7,5 @@ src/parser/__pycache__
 src/hook/__pycache__
 src/logs/*
 src/logs/dbt.log
+src/dbt/seeds/*
+!src/dbt/seeds/.gitkeep
