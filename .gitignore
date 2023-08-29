@@ -9,3 +9,4 @@ src/logs/*
 src/logs/dbt.log
 src/dbt/seeds/*
 !src/dbt/seeds/.gitkeep
+!src/dbt/seeds/properties.yml

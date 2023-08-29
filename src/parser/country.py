@@ -83,7 +83,10 @@ class Country:
         if not isinstance(self.country_dict[field], dict):
             raise TypeError('O valor do campo informado não é um dicionário')
         country_record = {i: [self.country_dict[field][i]] for i in self.country_dict[field] if not isinstance(self.country_dict[field][i], dict)}
-        return pd.DataFrame(country_record)
+        
+        table = pd.DataFrame(country_record)
+        common_name = self.names[['common_name']]
+        return common_name.merge(table, how='cross')
     
     def make_table_from_dict(self, _dict: dict) -> pd.DataFrame:
         '''
@@ -103,6 +106,7 @@ class Country:
             raise TypeError('O valor informado para o _dict não é um dicionário')
         country_record = {i: [_dict[i]] for i in _dict if not isinstance(_dict[i], dict)}
         return pd.DataFrame(country_record)
+    
     @key_error_decorator
     def make_key_value_table_from_dict(self, field: str, columns=['col1', 'col2']) -> pd.DataFrame:
         '''
@@ -125,12 +129,15 @@ class Country:
         '''
         assert len(columns) == 2, 'Informe somente duas colunas. len(columns) must be 2.'
         _dict = self.country_dict[field]
-        return pd.DataFrame(
+        table = pd.DataFrame(
             {
                 columns[0]: [i for i in _dict],
                 columns[1]: [_dict[i] for i in _dict],
             }
         )
+        common_name = self.names[['common_name']]
+        return common_name.merge(table, how='cross')
+    
     @key_error_decorator
     def make_table_from_list(self, field: str):
         '''
@@ -186,11 +193,18 @@ class Country:
 
 
         '''
-        if cols is None:
-            table = self.make_table_from_dict_field('name')
+        field = 'name'
+        if not isinstance(self.country_dict[field], dict):
+            raise TypeError('O valor do campo informado não é um dicionário')
+        country_record = {i: [self.country_dict[field][i]] for i in self.country_dict[field] if not isinstance(self.country_dict[field][i], dict)}
+        
+        table = pd.DataFrame(country_record)
         if isinstance(cols, str):
             cols = [cols]
-            table =  self.make_table_from_dict_field('name')[cols]
+            table = table[cols]
+        if isinstance(cols, list|tuple):
+            table = table[cols]
+            
         return (table
                     .rename(
                         dict(zip(table.columns, [f'{i}_name' for i in table.columns])),
@@ -201,7 +215,7 @@ class Country:
     @key_error_decorator
     def create_native_names_table(self):
         native_names = self.country_dict['name']['nativeName']
-        return (self.create_name_table('common')
+        return (self.names[['common_name']]
                     .merge(pd.concat([self.make_table_from_dict_and_keep_key(native_names, i, 'language_code') for i in native_names], ignore_index=True),
                         how='cross'
                         )
@@ -219,9 +233,11 @@ class Country:
         '''
         langs = self.make_key_value_table_from_dict(
             'languages', ['lang_code', 'lang'])
-        common_name = self.create_name_table('common')
-        lang_table = common_name.merge(langs, how='cross')
-        return lang_table
+        # common_name = self.create_name_table('common')
+        # lang_table = common_name.merge(langs, how='cross')
+        return langs
+
+
 
     def create_code_table(self):
         '''creates a code table containing:
@@ -241,7 +257,7 @@ class Country:
         fields = ["cca2", "ccn3", "cca3", "cioc", 'fifa', "status"]
         code_table = pd.DataFrame(
             {i: [self.country_dict[i]] for i in fields if i in self.country_dict})
-        return self.create_name_table('common').merge(code_table, how='cross')
+        return self.names[['common_name']].merge(code_table, how='cross')
     
     @key_error_decorator
     def create_independency_table(self):
@@ -254,7 +270,7 @@ class Country:
         fields = ['independent']
         independency_table = pd.DataFrame(
             {i: ['y' if self.country_dict[i] else 'n'] for i in fields})
-        return self.create_name_table('common').merge(independency_table, how='cross')
+        return self.names[['common_name']].merge(independency_table, how='cross')
 
     def create_un_membership_table(self):
         '''creates a table containing common name and unMember flag (y/n)

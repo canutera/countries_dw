@@ -1,0 +1,175 @@
+version: 2
+#### Example
+# seeds:
+#   - name: [<seed-name>]
+#     config:
+#       [enabled](/reference/resource-configs/enabled): true | false
+#       [tags](/reference/resource-configs/tags): <string> | [<string>]
+#       [pre-hook](/reference/resource-configs/pre-hook-post-hook): <sql-statement> | [<sql-statement>]
+#       [post-hook](/reference/resource-configs/pre-hook-post-hook): <sql-statement> | [<sql-statement>]
+#       [database](/reference/resource-configs/database): <string>
+#       [schema](/reference/resource-properties/schema): <string>
+#       [alias](/reference/resource-configs/alias): <string>
+#       [persist_docs](/reference/resource-configs/persist_docs): <dict>
+#       [full_refresh](/reference/resource-configs/full_refresh): <boolean>
+#       [meta](/reference/resource-configs/meta): {<dictionary>}
+#       [grants](/reference/resource-configs/grants): {<dictionary>}
+
+
+
+
+seeds:
+  - name: alt_spellings
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types: 
+        common_name: varchar(50)
+        altSpellings: varchar(255)
+      
+        
+
+  - name: borders
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        borders: varchar(3)
+
+  - name: capital
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        capital: varchar(50)
+        latitude: decimal(5,2)
+        longitude: decimal(5,2)
+      
+  - name: car_information
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        side: varchar(5)
+        signs: varchar(3)
+        
+  - name: codes
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        cca2: varchar(2)
+        ccn3: varchar(3)
+        cca3: varchar(3)
+        cioc: varchar(3)
+        fifa: varchar(3)
+        status: varchar(20)
+
+  - name: currencies
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        name: varchar(50)
+        symbol: varchar(6)
+        currency_code: varchar(3)
+       
+  - name: demonyms
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        f: varchar(40)
+        m: varchar(40)
+        language_code: varchar(3)
+
+  - name: maps
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        site: varchar(50)
+        link: varchar(255)
+
+  - name: gini_index
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        year	: smallint
+        link: decimal(5,2)
+        
+  - name: gini_index
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        year	: smallint
+        link: decimal(5,2)
+
+  - name: timezones
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        timezones	: varchar(9)
+        
+  - name: timezones
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        timezones	: varchar(9)
+
+  - name: flags
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        image_format	: varchar(3)
+        link: varchar(600)
+
+  - name: coat_of_arms
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        image_format	: varchar(3)
+        link: varchar(100)
+
+  - name: postal_codes
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        image_format	: varchar(3)
+        link: varchar(100)
