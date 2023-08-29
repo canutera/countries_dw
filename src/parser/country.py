@@ -38,7 +38,13 @@ class Country:
         self.independency_table = self.create_independency_table()
         self.un_membership_table = self.create_un_membership_table()
         self.currencies = self.make_table_from_dict_of_dicts('currencies', 'currency_code')
-        self.idds = self.make_table_from_dict_field('idd')
+
+        try: 
+            # Heard Island and McDonald Islands, Antarctica do not have suffixes
+            self.idds = self.make_table_from_dict_field('idd').explode('suffixes', ignore_index=True)
+        except KeyError: 
+            self.idds = self.make_table_from_dict_field('idd')
+
         self.capital = self.create_capital_info_table()
         self.alt_spellings = self.make_table_from_list('altSpellings')
         self.regions = self.create_region_table()
