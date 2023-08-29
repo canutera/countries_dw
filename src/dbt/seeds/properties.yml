@@ -1,22 +1,4 @@
 version: 2
-#### Example
-# seeds:
-#   - name: [<seed-name>]
-#     config:
-#       [enabled](/reference/resource-configs/enabled): true | false
-#       [tags](/reference/resource-configs/tags): <string> | [<string>]
-#       [pre-hook](/reference/resource-configs/pre-hook-post-hook): <sql-statement> | [<sql-statement>]
-#       [post-hook](/reference/resource-configs/pre-hook-post-hook): <sql-statement> | [<sql-statement>]
-#       [database](/reference/resource-configs/database): <string>
-#       [schema](/reference/resource-properties/schema): <string>
-#       [alias](/reference/resource-configs/alias): <string>
-#       [persist_docs](/reference/resource-configs/persist_docs): <dict>
-#       [full_refresh](/reference/resource-configs/full_refresh): <boolean>
-#       [meta](/reference/resource-configs/meta): {<dictionary>}
-#       [grants](/reference/resource-configs/grants): {<dictionary>}
-
-
-
 
 seeds:
   - name: alt_spellings
@@ -171,5 +153,126 @@ seeds:
       schema: raw
       column_types:
         common_name: varchar(50)
-        image_format	: varchar(3)
-        link: varchar(100)
+        format	: varchar(60)
+        link: varchar(160)
+
+  - name: names
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        official_name	: varchar(100)
+
+  - name: native_names
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        official	: varchar(100)
+        common	: varchar(50)
+        language_code	: varchar(3)
+        
+  - name: top_level_domains
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        tld: varchar(15)
+
+  - name: independency_table
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        independent: varchar(1)
+
+  - name: un_membership_table
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        unMember: varchar(1)
+
+  - name: idds
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        root: varchar(2)
+        suffixes: varchar(10)
+
+  - name: regions
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        region: varchar(20)
+        subregion: varchar(30)
+
+  - name: languages
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        lang_code: varchar(3)
+        lang: varchar(40)
+
+  - name: translations
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        official: varchar(100)
+        common: varchar(100)
+        lang_code: varchar(3)
+
+  - name: lat_lng
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        latitude: decimal(10,6)
+        longitude: decimal(10,6)
+
+  - name: general_information
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        landlocked: boolean
+        area: numeric
+        flag: decimal(10,6)
+        population: integer
+        startOfWeek: varchar(8)
+        
+  - name: continents
+    config:
+      enabled: true
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        continents: varcchar(15)
+        
