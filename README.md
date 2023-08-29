@@ -1,14 +1,16 @@
 
 
-
+<!-- 
 <details>
-  <summary><strong>English</strong></summary><br />
+  <summary><strong>English</strong></summary><br /> -->
 
 # Welcome to **countries_dw**
 
 - [Welcome to **countries\_dw**](#welcome-to-countries_dw)
     - [Description](#description)
     - [How to use](#how-to-use)
+    - [Setting a PostgreSQL in a WSL environment](#setting-a-postgresql-in-a-wsl-environment)
+    - [Using dbt to seed tables in Postgres Database](#using-dbt-to-seed-tables-in-postgres-database)
     - [Next steps](#next-steps)
 
 ### Description
@@ -17,11 +19,11 @@ There are several informations available and it was chosen for being open source
 
 Data from all countries are recieved as a list of dictionaries in a json response. 
 
-[Country class](https://github.com/canutera/countries_dw/blob/master/src/country.py) is responsible for parsing and assembling tables for
+[Country class](src\parser\country.py) is responsible for parsing and assembling tables for
 each country contained in the response.
 
-[CountriesHook](https://github.com/canutera/countries_dw/blob/master/src/countries_hook.py) makes a GET request at [All countries endpoint](https://restcountries.com/v3.1/all)
-and save a json file with information. Then parses and concatenates information from every country to save all tables at the [data folder](https://github.com/canutera/countries_dw/tree/master/data). This project uses Pandas for manipulating data, so all pandas files formats are supported.
+[CountriesHook](src\hook\countries_hook.py) makes a GET request at [All countries endpoint](https://restcountries.com/v3.1/all)
+and save a json file with information. Then parses and concatenates information from every country to save all tables at the [data folder](data). This project uses Pandas for manipulating data, so all pandas files formats are supported.
 
 
 ### How to use
@@ -47,7 +49,7 @@ activate
 ```
 Your brand new virtual envinroment should be setup and ready to use after these steps.
 
-The example below, shows a simple usage for countries_dw project which can be found in main.py file:
+The example below, shows a simple usage for countries_dw project which can be found in [main.py](src\main.py) file:
 ```python
 from src.countries_hook import CountriesHook
 file_format = 'parquet'
@@ -60,6 +62,125 @@ hook = (CountriesHook()
 If you run the following code in a Jupyter Notebook, make sure you are connected to the created virtual environment for this project.
 After running the code above, all tables should appear in the data folder. Just make sure, a valid format was passed.
 You can check [pandas.DataFrame Documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to look for valid formats.
+
+### Setting a PostgreSQL in a WSL environment
+
+I chose to set up PostgreSQL database on WSL, because I intend to orchestrate this whole project using Apache Airflow but still do not fully understand how to make it using docker. And
+because Airflow only works in a Linux environment, I ended up learning to set up in a WSL due to not having access to a Docker License in my work. (This might a good option if you are in the same situation).
+
+> A docker implementation will be later added on to this repository.
+
+To install WSL Distro in your machine, open a PowerShell terminal and type:
+```shell
+WSL --install Ubuntu
+```
+You can choose any distro, in this case I chose Ubuntu.
+This may take some minutes, an after installing, you will be asked to create a user with a password.
+
+After setting user, run these commands below:
+
+```bash
+sudo apt update && sudo apt upgrade
+
+# Update pip
+sudo apt install python3-pip
+
+# Install Postgres 15 
+sudo apt install libpq-dev
+
+# steps below are needed to get pubkey for postgres 15
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
+sudo apt update && sudo apt upgrade
+sudo apt install postgresql postgresql-client -y
+pip install psycopg2
+sudo apt update && sudo apt upgrade
+
+# Start the PostgreSQL service
+sudo service postgresql start
+
+# Go into the PostgreSQL interactive console to 
+# issue setup commands
+sudo -u postgres psql
+```
+If all commands were run correctly, after this you should in the Postgres terminal in Ubuntu. Run the following commands:
+```SQL
+--create user
+CREATE USER gabriel_canuto PASSWORD 'countries_dw';
+
+--Create the countries metadata database and setup all permissions
+CREATE DATABASE countries;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO gabriel_canuto;
+ALTER USER gabriel_canuto SET search_path = public;
+GRANT ALL PRIVILEGES ON DATABASE countries TO gabriel_canuto;
+ALTER USER gabriel_canuto CREATEDB;
+
+--connect to countries database
+\c countries;
+GRANT ALL ON SCHEMA public TO gabriel_canuto;
+```
+> You might want to customize user and password.
+
+Your Postgres database is now set up in WSL.
+
+### Using dbt to seed tables in Postgres Database
+
+If you used Poetry to manage dependecies, dbt-core and dbt-postgres (which is our adapter) should be already installed. Also the model is already created and ready run in [dbt folder](src\dbt). But first, we need to set up the dbt profile for this project in your machine.
+
+> The profiles.yml file can be found at:
+>  
+> C:\Users\\<your_username>\\\.dbt\profiles.yml
+
+Copy and paste the code below to set this profile to work in dbt
+
+
+```yml
+countries_dw:
+  outputs:
+
+    postgres:
+      type: postgres
+      threads: 2
+      host: 127.0.0.1
+      port: 5432
+      user: gabriel_canuto
+      pass: countries_dw
+      dbname: countries
+      schema: public
+
+  target: postgres
+```
+> **If you customized your user and password in Postgres**, please change the info before saving the files in order to work properly.
+
+To use the created model make sure your terminal is inside the src/dbt folder. If not, type: 
+
+```shell
+cd src/dbt
+```
+Inside the dbt folder, run:
+
+```shell
+dbt debug
+```
+To check if the profile is set up correctly. If something goes wrong, you might want to check your profiles.yml file again.
+
+If all checks passed, just run:
+```shell
+dbt run
+```
+To deploy this model to your database.
+
+
+<details>
+  <summary><strong>How to set up a dbt project</strong></summary><br />
+  Some bullshit here
+</details>
+
+
+
+
+
+
 
 ### Next steps
 
