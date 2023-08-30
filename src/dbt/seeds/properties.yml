@@ -4,6 +4,8 @@ seeds:
   - name: alt_spellings
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types: 
@@ -15,6 +17,8 @@ seeds:
   - name: borders
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -24,6 +28,8 @@ seeds:
   - name: capital
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -35,6 +41,8 @@ seeds:
   - name: car_information
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -45,6 +53,8 @@ seeds:
   - name: codes
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -59,6 +69,8 @@ seeds:
   - name: currencies
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -70,6 +82,8 @@ seeds:
   - name: demonyms
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -81,6 +95,8 @@ seeds:
   - name: maps
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -91,6 +107,8 @@ seeds:
   - name: gini_index
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -98,28 +116,11 @@ seeds:
         year	: smallint
         link: decimal(5,2)
         
-  - name: gini_index
-    config:
-      enabled: true
-      database: countries
-      schema: raw
-      column_types:
-        common_name: varchar(50)
-        year	: smallint
-        link: decimal(5,2)
-
   - name: timezones
     config:
       enabled: true
-      database: countries
-      schema: raw
-      column_types:
-        common_name: varchar(50)
-        timezones	: varchar(9)
-        
-  - name: timezones
-    config:
-      enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -129,6 +130,8 @@ seeds:
   - name: flags
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -139,6 +142,8 @@ seeds:
   - name: coat_of_arms
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -149,6 +154,8 @@ seeds:
   - name: postal_codes
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -159,6 +166,8 @@ seeds:
   - name: names
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -168,6 +177,8 @@ seeds:
   - name: native_names
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -179,6 +190,8 @@ seeds:
   - name: top_level_domains
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -188,6 +201,8 @@ seeds:
   - name: independency_table
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -197,6 +212,8 @@ seeds:
   - name: un_membership_table
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -206,6 +223,8 @@ seeds:
   - name: idds
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -216,6 +235,8 @@ seeds:
   - name: regions
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -226,6 +247,8 @@ seeds:
   - name: languages
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -236,6 +259,8 @@ seeds:
   - name: translations
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -247,6 +272,8 @@ seeds:
   - name: lat_lng
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -257,6 +284,8 @@ seeds:
   - name: general_information
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:
@@ -270,6 +299,8 @@ seeds:
   - name: continents
     config:
       enabled: true
+      docs:
+        show: false
       database: countries
       schema: raw
       column_types:

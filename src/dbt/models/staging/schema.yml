@@ -1,33 +1,14 @@
 version: 2
 
 sources:
-  - name: staging 
-    description: 'raw data recieved from countries api'
-    database: countries
-    +schema: staging
-    tables: 
-      - name: alt_spellings
-        description: 'Details on countries aliases'
-        columns:
-          - name: common_name
-            description: 'Common name of country as referred by natives'
-          - name: altSpellings  
-            description: 'Alternative spelling for the common name'
-        
-      - name: borders
-        description: 'Relation of countries a given country borders with.'
-        columns:
-          - name: common_name
-            description: 'Common name of country as referred by natives'
-          - name: borders  
-            description: 'code for country in alpha-3'
-      
-    - name: raw
-    description: 'raw data recieved from countries api'
+
+  - name: raw
+    description: raw data recieved from countries api
     database: countries
     schema: raw
     tables: 
-       - name: alt_spellings
+    
+      - name: alt_spellings
         description: 'Details on countries aliases'
         columns:
           - name: common_name
