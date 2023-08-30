@@ -1,13 +1,16 @@
 version: 2
 
 sources:
+  - name:
+
+
 
   - name: raw
     description: raw data recieved from countries api
     database: countries
     schema: raw
     tables: 
-    
+
       - name: alt_spellings
         description: 'Details on countries aliases'
         columns:
@@ -42,7 +45,7 @@ sources:
             description: Longitude coordinates of the capital
 
       - name: car_information
-        description: 'Information about driving in a countri]y'
+        description: 'Information about driving in a country'
         columns:
           - name: common_name
             description: Common name of country as referred by natives
