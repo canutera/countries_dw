@@ -1,10 +1,182 @@
 version: 2
 
+models:
+
+  - name: countries
+    description: List of names of a country
+
+    # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+    columns:
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: primary_key
+          - type: check
+            expression: "country_id > 0"
+
+      - name: common_name
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: unique
+          - type: not_null
+        
+
+      - name: official_name
+        description: Official name of country as reffered in international solemnities
+        data_type: text
+        constraints:
+          - type: not_null
+        
+
+  - name: languages
+    description: List of official languages
+     # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+    columns:
+
+      - name: lang_code
+        description: Language code
+        data_type: text
+        constraints:
+          - type: not_null
+          - type: primary_key
+          
+      - name: language_name
+        description: Name of Language in English
+        data_type: text
+        constraints:
+          - type: not_null
+
+  - name: languages_by_country
+     # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+
+    description: List of official languages for every country
+    columns:
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+            
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: lang_code
+        description: Language code
+        data_type: text
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.languages (lang_code)"
+          
+      - name: language_name
+        description: Name of Language in English
+        data_type: text
+        constraints:
+          - type: not_null
+ 
+  - name: country_native_names
+    description: List of native names of country
+
+    # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+    columns:
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: translated_official_name
+        description: Official name of country as reffered in international solemnities translated in language code specified.
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: translated_common_name
+        description: Common name of country as referred by natives translated in language code specified.
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: language
+        description: Language code of native name
+        data_type: text
+        constraints:
+          - type: not_null
+      
+      - name: lang_code
+        description: Language code of native name
+        data_type: text
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.languages (lang_code)"
+      
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+
+      # - name: codes
+      #   description: List of codes a country is referred to
+      #   columns:
+      #     - name: common_name
+      #       description: Common name of country as referred by natives
+
+      #     - name: cca2
+      #       description: ISO 3166-1 alpha-2 two-letter country codes
+
+      #     - name: ccn3
+      #       description: ISO 3166-1 numeric code (UN M49)
+
+      #     - name: cca3
+      #       description: ISO 3166-1 alpha-3 three-letter country codes
+
+      #     - name: cioc
+      #       description: Code of the International Olympic Committee
+
+      #     - name: fifa
+      #       description: FIFA code
+
+      #     - name: status
+      #       description: ISO 3166-1 assignment status
+       
+
+
 sources:
-  - name:
-
-
-
   - name: raw
     description: raw data recieved from countries api
     database: countries

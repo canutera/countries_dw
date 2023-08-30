@@ -31,13 +31,33 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  raw:
-    # Config indicated by + and applies to all files under models/example/
-    +materialized: table
-    +database: countries
-    +schema: staging
-    
+  countries_dw: 
+    staging:
+      # Config indicated by + and applies to all files under models/example/
+      +database: countries
+      +schema: staging
+      +materialized: table
+      +persist_docs:
+        relation: true
+        columns: true
+      
 seeds:
   +schema: raw
   
+# This package adds an automatic hook to create constraints
+# on-run-end:
+#   - "{{ dbt_constraints.create_constraints() }}"
 
+# vars:
+#   # The package can be temporarily disabled using this variable
+#   dbt_constraints_enabled: true
+
+#   # The package can also add constraints on sources if you have sufficient privileges
+#   dbt_constraints_sources_enabled: false
+
+#   # You can also be specific on which constraints are enabled for sources
+#   # You must also enable dbt_constraints_sources_enabled above
+#   dbt_constraints_sources_pk_enabled: true
+#   dbt_constraints_sources_uk_enabled: true
+#   dbt_constraints_sources_fk_enabled: true
+#   dbt_constraints_sources_nn_enabled: true
