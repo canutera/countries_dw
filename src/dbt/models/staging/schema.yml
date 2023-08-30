@@ -1,25 +1,341 @@
 version: 2
 
 sources:
-  - name: countries
-    description: 'data related to countries api'
+  - name: staging 
+    description: 'raw data recieved from countries api'
     database: countries
-    schema: seed
+    +schema: staging
     tables: 
+      - name: alt_spellings
+        description: 'Details on countries aliases'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+          - name: altSpellings  
+            description: 'Alternative spelling for the common name'
+        
+      - name: borders
+        description: 'Relation of countries a given country borders with.'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+          - name: borders  
+            description: 'code for country in alpha-3'
+      
+    - name: raw
+    description: 'raw data recieved from countries api'
+    database: countries
+    schema: raw
+    tables: 
+       - name: alt_spellings
+        description: 'Details on countries aliases'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
 
-    - name: alt_spellings
-      description: 'Details on countries aliases'
-      columns:
-        - name: common_name
-          description: 'Common name of country as referred by natives'
-        - name: altSpellings  
-          description: 'Alternative spelling for the common name'
-      
-    - name: borders
-      description: 'Relation of countries a given country borders with.'
-      columns:
-        - name: common_name
-          description: 'Common name of country as referred by natives'
-        - name: borders  
-          description: 'code for country in alpha-3'
-      
+          - name: altSpellings  
+            description: 'Alternative spelling for the common name'
+        
+      - name: borders
+        description: 'Relation of countries a given country borders with.'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+
+          - name: borders  
+            description: 'code for country in alpha-3'
+
+      - name: capital
+        description: 'Details of the capital of the country'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+
+          - name: capital
+            description: Name of capital of the country
+
+          - name: latitude
+            description: Latitude coordinates of the capital
+
+          - name: longitude
+            description: Longitude coordinates of the capital
+
+      - name: car_information
+        description: 'Information about driving in a countri]y'
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: side
+            description: Which side of street cars drive in a country
+
+          - name: signs
+            description: Car distinguised (oval) signs
+
+      - name: coat_of_arms
+        description: MainFacts.com links to svg and png images
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: image_format
+            description: Image format of coat of arms picture
+
+          - name: link
+            description: link to coat of arms image
+
+      - name: codes
+        description: List of codes a country is referred to
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: cca2
+            description: ISO 3166-1 alpha-2 two-letter country codes
+
+          - name: ccn3
+            description: ISO 3166-1 numeric code (UN M49)
+
+          - name: cca3
+            description: ISO 3166-1 alpha-3 three-letter country codes
+
+          - name: cioc
+            description: Code of the International Olympic Committee
+
+          - name: fifa
+            description: FIFA code
+
+          - name: status
+            description: ISO 3166-1 assignment status
+
+      - name: continents
+        description: List of continents the country is on
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: continents
+            description: List of continents the country is on
+
+      - name: currencies
+        description: List of all currencies
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+
+          - name: name
+            description: Name of currency
+
+          - name: symbol
+            description: Symbol of currency
+
+          - name: currency_code
+            description: Code of currency
+
+      - name: demonyms
+        description: How Inhabitants of the country of country are referred as
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: f
+            description: female demonym for country
+
+          - name: m
+            description: male demonym for country
+
+          - name: language_code
+            description: language code for denomym (which idiom is written)
+
+      - name: flags
+        description: Flagpedia links to svg and png flags
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: image_format
+            description: Image format of flag picture
+
+          - name: link
+            description: Link to the svg flag on Flagpedia
+
+      - name: general_information
+        description: Miscellaneous information about country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: landlocked
+            description: If country does not has access to sea 
+
+          - name: area
+            description: Geographical size of country
+
+          - name: flag
+            description: flag emoji
+
+          - name: population
+            description: Value of population in country
+
+          - name: startOfWeek
+            description: When week starts in country
+
+      - name: gini_index
+        description: Worldbank Gini index
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: year
+            description: year of gini index value
+
+          - name: index
+            description: Worldbank Gini index value
+
+      - name: idds
+        description: International dialing codes of country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: root
+            description: root for idd
+
+          - name: suffixes
+            description: suffixes for idd 
+
+      - name: independency_table
+        description: List of ISO 3166-1 independence status
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: independent
+            description: ISO 3166-1 independence status (the country is considered a sovereign state)
+
+      - name: languages
+        description: List of official languages
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: lang_code
+            description: Language code
+
+          - name: lang
+            description: Name of Language in English
+
+      - name: lat_lng
+        description: List of Latitude and longitude of country 
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: latitude
+            description: Latitude coordinates of country
+
+          - name: longitude
+            description: Longitude coordinates of country
+
+      - name: maps
+        description: List of Link to Google maps and Open Street maps
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: site
+            description: Site of map
+
+          - name: link
+            description: Link to Google maps and Open Street maps
+
+      - name: names
+        description: List of names of a country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: official_name
+            description: Official name of country as reffered in international solemnities
+
+      - name: native_names
+        description: List of native names of country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: official
+            description: Official name of country as reffered in international solemnities translated in language code specified.
+
+          - name: common
+            description: Common name of country as referred by natives translated in language code specified.
+
+          - name: language_code
+            description: Language code of native name
+
+      - name: postal_codes
+        description: List of Country postal codes
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: format
+            description: Format for postal code in country
+
+          - name: regex
+            description: Regular expression to find postal code inside a text
+
+      - name: regions
+        description: Information about region of country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: region
+            description: Region of country
+
+          - name: subregion
+            description: Subregion of country
+
+      - name: timezones
+        description: List of timezones 
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: timezones
+            description: Timezone region inside de country
+
+      - name: top_level_domains
+        description: List of Internet top level domains
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: tld
+            description: Top level domain in country
+
+      - name: translations
+        description: List of country name translations
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: official
+            description: Official name of country as reffered in international solemnities translated in language code specified.
+
+          - name: common
+            description: Common name of country as referred by natives translated in language code specified.
+
+          - name: language_code
+            description: Language code of translation
+
+      - name: un_membership_table
+        description: List of UN Member status 
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: unMember
+            description: UN Member status

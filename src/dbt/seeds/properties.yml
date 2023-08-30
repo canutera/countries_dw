@@ -263,7 +263,7 @@ seeds:
         common_name: varchar(50)
         landlocked: boolean
         area: numeric
-        flag: decimal(10,6)
+        flag: varchar(2)
         population: integer
         startOfWeek: varchar(8)
         
@@ -274,5 +274,5 @@ seeds:
       schema: raw
       column_types:
         common_name: varchar(50)
-        continents: varcchar(15)
+        continents: varchar(15)
         
