@@ -68,7 +68,7 @@ You can check [pandas.DataFrame Documentation](https://pandas.pydata.org/docs/re
 I chose to set up PostgreSQL database on WSL, because I intend to orchestrate this whole project using Apache Airflow but still do not fully understand how to make it using docker. And
 because Airflow only works in a Linux environment, I ended up learning to set up in a WSL due to not having access to a Docker License in my work. (This might a good option if you are in the same situation).
 
-> A docker implementation will be later added on to this repository.
+> A docker implementation will be later added to this repository.
 
 To install WSL Distro in your machine, open a PowerShell terminal and type:
 ```shell
@@ -103,7 +103,7 @@ sudo service postgresql start
 # issue setup commands
 sudo -u postgres psql
 ```
-If all commands were run correctly, after this you should in the Postgres terminal in Ubuntu. Run the following commands:
+If all commands were run correctly, after this you should be in the Postgres terminal in Ubuntu. Run the following commands:
 ```SQL
 --create user
 CREATE USER gabriel_canuto PASSWORD 'countries_dw';
