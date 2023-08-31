@@ -245,6 +245,7 @@ seeds:
         subregion: varchar(30)
 
   - name: languages
+    
     config:
       enabled: true
       docs:

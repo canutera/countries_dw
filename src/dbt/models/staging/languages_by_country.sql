@@ -1,4 +1,4 @@
-depends_on: {{ ref('countries') }}
+-- depends_on: {{ ref('countries') }}
 
 with raw_languages as (
     select * from {{source('raw', 'languages')}}
