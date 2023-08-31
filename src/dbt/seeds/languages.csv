@@ -1,0 +1,412 @@
+common_name,lang_code,lang
+Mauritania,ara,Arabic
+Eritrea,ara,Arabic
+Eritrea,eng,English
+Eritrea,tir,Tigrinya
+Puerto Rico,eng,English
+Puerto Rico,spa,Spanish
+Romania,ron,Romanian
+Antigua and Barbuda,eng,English
+Cocos (Keeling) Islands,eng,English
+Colombia,spa,Spanish
+Chile,spa,Spanish
+Ghana,eng,English
+Gibraltar,eng,English
+Venezuela,spa,Spanish
+Kosovo,sqi,Albanian
+Kosovo,srp,Serbian
+Botswana,eng,English
+Botswana,tsn,Tswana
+Tanzania,eng,English
+Tanzania,swa,Swahili
+Montenegro,cnr,Montenegrin
+Comoros,ara,Arabic
+Comoros,fra,French
+Comoros,zdj,Comorian
+Ivory Coast,fra,French
+Cape Verde,por,Portuguese
+Lesotho,eng,English
+Lesotho,sot,Sotho
+Gabon,fra,French
+Grenada,eng,English
+Jordan,ara,Arabic
+Sweden,swe,Swedish
+Vietnam,vie,Vietnamese
+Qatar,ara,Arabic
+Brazil,por,Portuguese
+Finland,fin,Finnish
+Finland,swe,Swedish
+Georgia,kat,Georgian
+Senegal,fra,French
+South Korea,kor,Korean
+Anguilla,eng,English
+São Tomé and Príncipe,por,Portuguese
+Guyana,eng,English
+Nauru,eng,English
+Nauru,nau,Nauru
+Suriname,nld,Dutch
+Cambodia,khm,Khmer
+Curaçao,eng,English
+Curaçao,nld,Dutch
+Curaçao,pap,Papiamento
+Maldives,div,Maldivian
+Paraguay,grn,Guaraní
+Paraguay,spa,Spanish
+Peru,aym,Aymara
+Peru,que,Quechua
+Peru,spa,Spanish
+France,fra,French
+Falkland Islands,eng,English
+Uzbekistan,rus,Russian
+Uzbekistan,uzb,Uzbek
+Egypt,ara,Arabic
+United States Minor Outlying Islands,eng,English
+Dominica,eng,English
+Israel,ara,Arabic
+Israel,heb,Hebrew
+Monaco,fra,French
+Republic of the Congo,fra,French
+Republic of the Congo,kon,Kikongo
+Republic of the Congo,lin,Lingala
+Ireland,eng,English
+Ireland,gle,Irish
+French Southern and Antarctic Lands,fra,French
+Kazakhstan,kaz,Kazakh
+Kazakhstan,rus,Russian
+Malaysia,eng,English
+Malaysia,msa,Malay
+United Arab Emirates,ara,Arabic
+Czechia,ces,Czech
+Czechia,slk,Slovak
+Yemen,ara,Arabic
+Myanmar,mya,Burmese
+Saint Kitts and Nevis,eng,English
+United States Virgin Islands,eng,English
+French Polynesia,fra,French
+Fiji,eng,English
+Fiji,fij,Fijian
+Fiji,hif,Fiji Hindi
+Albania,sqi,Albanian
+Isle of Man,eng,English
+Isle of Man,glv,Manx
+Australia,eng,English
+Caribbean Netherlands,eng,English
+Caribbean Netherlands,nld,Dutch
+Caribbean Netherlands,pap,Papiamento
+Italy,ita,Italian
+Afghanistan,prs,Dari
+Afghanistan,pus,Pashto
+Afghanistan,tuk,Turkmen
+Kyrgyzstan,kir,Kyrgyz
+Kyrgyzstan,rus,Russian
+Wallis and Futuna,fra,French
+United States,eng,English
+Martinique,fra,French
+Philippines,eng,English
+Philippines,fil,Filipino
+Serbia,srp,Serbian
+"Saint Helena, Ascension and Tristan da Cunha",eng,English
+British Indian Ocean Territory,eng,English
+Moldova,ron,Romanian
+Hong Kong,eng,English
+Hong Kong,zho,Chinese
+Pakistan,eng,English
+Pakistan,urd,Urdu
+Saudi Arabia,ara,Arabic
+Angola,por,Portuguese
+New Caledonia,fra,French
+Lithuania,lit,Lithuanian
+Netherlands,nld,Dutch
+Greenland,kal,Greenlandic
+Vatican City,ita,Italian
+Vatican City,lat,Latin
+Micronesia,eng,English
+Heard Island and McDonald Islands,eng,English
+Kuwait,ara,Arabic
+Switzerland,fra,French
+Switzerland,gsw,Swiss German
+Switzerland,ita,Italian
+Switzerland,roh,Romansh
+Saint Lucia,eng,English
+Turks and Caicos Islands,eng,English
+Malta,eng,English
+Malta,mlt,Maltese
+Tonga,eng,English
+Tonga,ton,Tongan
+Guatemala,spa,Spanish
+Uganda,eng,English
+Uganda,swa,Swahili
+Guinea,fra,French
+American Samoa,eng,English
+American Samoa,smo,Samoan
+Sint Maarten,eng,English
+Sint Maarten,fra,French
+Sint Maarten,nld,Dutch
+Nepal,nep,Nepali
+Slovenia,slv,Slovene
+British Virgin Islands,eng,English
+Ethiopia,amh,Amharic
+Kiribati,eng,English
+Kiribati,gil,Gilbertese
+Guam,cha,Chamorro
+Guam,eng,English
+Guam,spa,Spanish
+Togo,fra,French
+Papua New Guinea,eng,English
+Papua New Guinea,hmo,Hiri Motu
+Papua New Guinea,tpi,Tok Pisin
+Iceland,isl,Icelandic
+Northern Mariana Islands,cal,Carolinian
+Northern Mariana Islands,cha,Chamorro
+Northern Mariana Islands,eng,English
+Austria,de,German
+Morocco,ara,Arabic
+Morocco,ber,Berber
+South Georgia,eng,English
+Iraq,ara,Arabic
+Iraq,arc,Aramaic
+Iraq,ckb,Sorani
+Liechtenstein,deu,German
+Dominican Republic,spa,Spanish
+Ecuador,spa,Spanish
+Sierra Leone,eng,English
+Belize,bjz,Belizean Creole
+Belize,eng,English
+Belize,spa,Spanish
+Bhutan,dzo,Dzongkha
+Iran,fas,Persian (Farsi)
+Bolivia,aym,Aymara
+Bolivia,grn,Guaraní
+Bolivia,que,Quechua
+Bolivia,spa,Spanish
+Turkey,tur,Turkish
+Faroe Islands,dan,Danish
+Faroe Islands,fao,Faroese
+Saint Barthélemy,fra,French
+Greece,ell,Greek
+India,eng,English
+India,hin,Hindi
+India,tam,Tamil
+Nicaragua,spa,Spanish
+Central African Republic,fra,French
+Central African Republic,sag,Sango
+DR Congo,fra,French
+DR Congo,kon,Kikongo
+DR Congo,lin,Lingala
+DR Congo,lua,Tshiluba
+DR Congo,swa,Swahili
+Mali,fra,French
+Azerbaijan,aze,Azerbaijani
+Singapore,zho,Chinese
+Singapore,eng,English
+Singapore,msa,Malay
+Singapore,tam,Tamil
+Cuba,spa,Spanish
+Bangladesh,ben,Bengali
+Marshall Islands,eng,English
+Marshall Islands,mah,Marshallese
+Bouvet Island,nor,Norwegian
+Latvia,lav,Latvian
+Hungary,hun,Hungarian
+Åland Islands,swe,Swedish
+Bulgaria,bul,Bulgarian
+Seychelles,crs,Seychellois Creole
+Seychelles,eng,English
+Seychelles,fra,French
+Cameroon,eng,English
+Cameroon,fra,French
+Macau,por,Portuguese
+Macau,zho,Chinese
+Mexico,spa,Spanish
+Brunei,msa,Malay
+Taiwan,zho,Chinese
+Aruba,nld,Dutch
+Aruba,pap,Papiamento
+Trinidad and Tobago,eng,English
+Vanuatu,bis,Bislama
+Vanuatu,eng,English
+Vanuatu,fra,French
+Algeria,ara,Arabic
+Cook Islands,eng,English
+Cook Islands,rar,Cook Islands Māori
+Burundi,fra,French
+Burundi,run,Kirundi
+Belarus,bel,Belarusian
+Belarus,rus,Russian
+North Korea,kor,Korean
+Saint Martin,fra,French
+Samoa,eng,English
+Samoa,smo,Samoan
+Zimbabwe,bwg,Chibarwe
+Zimbabwe,eng,English
+Zimbabwe,kck,Kalanga
+Zimbabwe,khi,Khoisan
+Zimbabwe,ndc,Ndau
+Zimbabwe,nde,Northern Ndebele
+Zimbabwe,nya,Chewa
+Zimbabwe,sna,Shona
+Zimbabwe,sot,Sotho
+Zimbabwe,toi,Tonga
+Zimbabwe,tsn,Tswana
+Zimbabwe,tso,Tsonga
+Zimbabwe,ven,Venda
+Zimbabwe,xho,Xhosa
+Zimbabwe,zib,Zimbabwean Sign Language
+Bermuda,eng,English
+Djibouti,ara,Arabic
+Djibouti,fra,French
+United Kingdom,eng,English
+Niue,eng,English
+Niue,niu,Niuean
+Guinea-Bissau,por,Portuguese
+Guinea-Bissau,pov,Upper Guinea Creole
+Japan,jpn,Japanese
+Tuvalu,eng,English
+Tuvalu,tvl,Tuvaluan
+Réunion,fra,French
+Sudan,ara,Arabic
+Sudan,eng,English
+North Macedonia,mkd,Macedonian
+Canada,eng,English
+Canada,fra,French
+Indonesia,ind,Indonesian
+Gambia,eng,English
+Somalia,ara,Arabic
+Somalia,som,Somali
+Mauritius,eng,English
+Mauritius,fra,French
+Mauritius,mfe,Mauritian Creole
+Montserrat,eng,English
+Russia,rus,Russian
+Portugal,por,Portuguese
+Oman,ara,Arabic
+Christmas Island,eng,English
+Croatia,hrv,Croatian
+Mongolia,mon,Mongolian
+Tajikistan,rus,Russian
+Tajikistan,tgk,Tajik
+Solomon Islands,eng,English
+Haiti,fra,French
+Haiti,hat,Haitian Creole
+Honduras,spa,Spanish
+Namibia,afr,Afrikaans
+Namibia,deu,German
+Namibia,eng,English
+Namibia,her,Herero
+Namibia,hgm,Khoekhoe
+Namibia,kwn,Kwangali
+Namibia,loz,Lozi
+Namibia,ndo,Ndonga
+Namibia,tsn,Tswana
+Argentina,grn,Guaraní
+Argentina,spa,Spanish
+Niger,fra,French
+Timor-Leste,por,Portuguese
+Timor-Leste,tet,Tetum
+Western Sahara,ber,Berber
+Western Sahara,mey,Hassaniya
+Western Sahara,spa,Spanish
+Uruguay,spa,Spanish
+Barbados,eng,English
+Guernsey,eng,English
+Guernsey,fra,French
+Guernsey,nfr,Guernésiais
+Estonia,est,Estonian
+Kenya,eng,English
+Kenya,swa,Swahili
+Jamaica,eng,English
+Jamaica,jam,Jamaican Patois
+Luxembourg,deu,German
+Luxembourg,fra,French
+Luxembourg,ltz,Luxembourgish
+Guadeloupe,fra,French
+Tunisia,ara,Arabic
+Cayman Islands,eng,English
+Mozambique,por,Portuguese
+Tokelau,eng,English
+Tokelau,smo,Samoan
+Tokelau,tkl,Tokelauan
+Germany,deu,German
+Liberia,eng,English
+Pitcairn Islands,eng,English
+Saint Pierre and Miquelon,fra,French
+South Sudan,eng,English
+Slovakia,slk,Slovak
+Palau,eng,English
+Palau,pau,Palauan
+Cyprus,ell,Greek
+Cyprus,tur,Turkish
+Libya,ara,Arabic
+Mayotte,fra,French
+Turkmenistan,rus,Russian
+Turkmenistan,tuk,Turkmen
+Equatorial Guinea,fra,French
+Equatorial Guinea,por,Portuguese
+Equatorial Guinea,spa,Spanish
+Nigeria,eng,English
+Norway,nno,Norwegian Nynorsk
+Norway,nob,Norwegian Bokmål
+Norway,smi,Sami
+Bosnia and Herzegovina,bos,Bosnian
+Bosnia and Herzegovina,hrv,Croatian
+Bosnia and Herzegovina,srp,Serbian
+South Africa,afr,Afrikaans
+South Africa,eng,English
+South Africa,nbl,Southern Ndebele
+South Africa,nso,Northern Sotho
+South Africa,sot,Southern Sotho
+South Africa,ssw,Swazi
+South Africa,tsn,Tswana
+South Africa,tso,Tsonga
+South Africa,ven,Venda
+South Africa,xho,Xhosa
+South Africa,zul,Zulu
+Denmark,dan,Danish
+Laos,lao,Lao
+Madagascar,fra,French
+Madagascar,mlg,Malagasy
+El Salvador,spa,Spanish
+Andorra,cat,Catalan
+Sri Lanka,sin,Sinhala
+Sri Lanka,tam,Tamil
+Rwanda,eng,English
+Rwanda,fra,French
+Rwanda,kin,Kinyarwanda
+Armenia,hye,Armenian
+Chad,ara,Arabic
+Chad,fra,French
+Benin,fra,French
+Syria,ara,Arabic
+Spain,spa,Spanish
+Thailand,tha,Thai
+Svalbard and Jan Mayen,nor,Norwegian
+Ukraine,ukr,Ukrainian
+China,zho,Chinese
+Malawi,eng,English
+Malawi,nya,Chewa
+Panama,spa,Spanish
+Bahrain,ara,Arabic
+Saint Vincent and the Grenadines,eng,English
+Jersey,eng,English
+Jersey,fra,French
+Jersey,nrf,Jèrriais
+Burkina Faso,fra,French
+Poland,pol,Polish
+Belgium,deu,German
+Belgium,fra,French
+Belgium,nld,Dutch
+Bahamas,eng,English
+Costa Rica,spa,Spanish
+San Marino,ita,Italian
+New Zealand,eng,English
+New Zealand,mri,Māori
+New Zealand,nzs,New Zealand Sign Language
+French Guiana,fra,French
+Norfolk Island,eng,English
+Norfolk Island,pih,Norfuk
+Lebanon,ara,Arabic
+Lebanon,fra,French
+Zambia,eng,English
+Eswatini,eng,English
+Eswatini,ssw,Swazi
+Palestine,ara,Arabic

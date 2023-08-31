@@ -1,3 +1,5 @@
+depends_on: {{ ref('countries') }}
+
 with raw_alt_spellings as (
     select * from {{source('raw', 'alt_spellings')}}
 ),

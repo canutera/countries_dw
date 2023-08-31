@@ -1,3 +1,5 @@
+depends_on: {{ ref('countries') }}
+depends_on: {{ ref('languages') }}
 with raw_native_names as (
     select * from {{source('raw', 'native_names')}}
 ),

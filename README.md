@@ -9,8 +9,8 @@
 - [Welcome to **countries\_dw**](#welcome-to-countries_dw)
     - [Description](#description)
     - [How to use](#how-to-use)
-    - [Setting a PostgreSQL in a WSL environment](#setting-a-postgresql-in-a-wsl-environment)
-    - [Using dbt to seed tables in Postgres Database](#using-dbt-to-seed-tables-in-postgres-database)
+    - [Setting a PostgreSQL database in a WSL environment](#setting-a-postgresql-database-in-a-wsl-environment)
+    - [Deploy dbt project in Postgres Database](#deploy-dbt-project-in-postgres-database)
     - [Next steps](#next-steps)
 
 ### Description
@@ -39,7 +39,8 @@ pip install poetry
 ```
 Then run:
 ```bash
-poetry config virtualenvs.in-project true
+# add commented line to create venv inside the project folder
+# poetry config virtualenvs.in-project true
 poetry install
 ```
 To install the project dependencies inside the current folder. After installing run:
@@ -52,7 +53,7 @@ Your brand new virtual envinroment should be setup and ready to use after these 
 The example below, shows a simple usage for countries_dw project which can be found in [main.py](src\main.py) file:
 ```python
 from src.countries_hook import CountriesHook
-file_format = 'parquet'
+file_format = 'csv'
 hook = (CountriesHook()
             .parse_countries()
             .parse_tables()
@@ -63,7 +64,7 @@ If you run the following code in a Jupyter Notebook, make sure you are connected
 After running the code above, all tables should appear in the data folder. Just make sure, a valid format was passed.
 You can check [pandas.DataFrame Documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) to look for valid formats.
 
-### Setting a PostgreSQL in a WSL environment
+### Setting a PostgreSQL database in a WSL environment
 
 I chose to set up PostgreSQL database on WSL, because I intend to orchestrate this whole project using Apache Airflow but still do not fully understand how to make it using docker. And
 because Airflow only works in a Linux environment, I ended up learning to set up in a WSL due to not having access to a Docker License in my work. (This might a good option if you are in the same situation).
@@ -123,7 +124,7 @@ GRANT ALL ON SCHEMA public TO gabriel_canuto;
 
 Your Postgres database is now set up in WSL.
 
-### Using dbt to seed tables in Postgres Database
+### Deploy dbt project in Postgres Database
 
 If you used Poetry to manage dependecies, dbt-core and dbt-postgres (which is our adapter) should be already installed. Also the model is already created and ready run in [dbt folder](src\dbt). But first, we need to set up the dbt profile for this project in your machine.
 
@@ -162,18 +163,71 @@ Inside the dbt folder, run:
 ```shell
 dbt debug
 ```
-To check if the profile is set up correctly. If something goes wrong, you might want to check your profiles.yml file again.
+To check if the profile is set up correctly. If something goes wrong, you might want to: 
+ -  make sure you are inside src/dbt folder
+ -  make sure database is running and accepting connections
+ -  check your profiles.yml file again 
 
 If all checks passed, just run:
+
 ```shell
+dbt seed
 dbt run
 ```
-To deploy this model to your database.
+To deploy this project to your database.
+
+To check out the project documentation, please run:
+
+```shell
+dbt docs generate
+dbt docs serve
+```
+
+A webserver on localhost:8080 will open in your browser.
 
 
 <details>
-  <summary><strong>How to set up a dbt project</strong></summary><br />
-  Some bullshit here
+  <summary><strong> Information on how this project was built</strong></summary><br />
+
+  Data from countries api was parsed to csv files and saved in [dbt seed folder](src\dbt\seeds).
+
+  > Note:
+  > According to [dbt seed docs](https://docs.getdbt.com/docs/build/seeds) this is a poor use of this feature. Seed is meant to keep track
+  > of relevant data using version control. But for the sake of simplicity and also because our data is small (less than 1MB), this feature was used to load data to the warehouse. 
+  > 
+  > Seed information is hidden from docs and is declared as a source in the raw schema. 
+
+The following code was run in the project environment to save csvs in the [dbt seed folder](src\dbt\seeds).
+
+```python
+from src.hook.countries_hook import CountriesHook
+file_format = 'csv'
+hook = (CountriesHook()
+            .parse_countries()
+            .parse_tables()
+            .save_tables(file_format, destination='C:\Git\countries_dw\src\dbt\seeds', index=False)
+      )
+```
+Then in seed folder, a [properties.yml file](src\dbt\seeds\properties.yml) was configured to load data and omitit seeds from documetation using the format below:
+
+```yml
+version: 2
+
+seeds:
+  - name: table
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types: 
+        col1: int
+        col2: varchar(255)
+      
+```
+Seeded files were declared as source in the [model schema](src\dbt\models\staging\schema.yml) along with models for the staging schema including constraints.
+
 </details>
 
 
@@ -184,9 +238,11 @@ To deploy this model to your database.
 
 ### Next steps
 
-- [ ] Set up a WSL 
-- [ ] Set up a PostgreSQL database to store table
-- [ ] Create data model and documentation
+- [x] Set up a WSL 
+- [x] Set up a PostgreSQL database to store table
+- [x] Create data model and documentation
+- [ ] Finish model creation and docs
+- [ ] Start data visualization for countries_dw
 
 
 

@@ -1,0 +1,251 @@
+common_name,landlocked,area,flag,population,startOfWeek
+Mauritania,False,1030700.0,🇲🇷,4649660,monday
+Eritrea,False,117600.0,🇪🇷,5352000,monday
+Puerto Rico,False,8870.0,🇵🇷,3194034,monday
+Romania,False,238391.0,🇷🇴,19286123,monday
+Antigua and Barbuda,False,442.0,🇦🇬,97928,monday
+Cocos (Keeling) Islands,False,14.0,🇨🇨,544,monday
+Colombia,False,1141748.0,🇨🇴,50882884,monday
+Chile,False,756102.0,🇨🇱,19116209,monday
+Ghana,False,238533.0,🇬🇭,31072945,monday
+Gibraltar,False,6.0,🇬🇮,33691,monday
+Venezuela,False,916445.0,🇻🇪,28435943,monday
+Kosovo,True,10908.0,🇽🇰,1775378,monday
+Botswana,True,582000.0,🇧🇼,2351625,monday
+Tanzania,False,945087.0,🇹🇿,59734213,monday
+Montenegro,False,13812.0,🇲🇪,621718,monday
+Comoros,False,1862.0,🇰🇲,869595,monday
+Ivory Coast,False,322463.0,🇨🇮,26378275,monday
+Cape Verde,False,4033.0,🇨🇻,555988,monday
+Lesotho,True,30355.0,🇱🇸,2142252,monday
+Gabon,False,267668.0,🇬🇦,2225728,monday
+Grenada,False,344.0,🇬🇩,112519,monday
+Jordan,False,89342.0,🇯🇴,10203140,sunday
+Sweden,False,450295.0,🇸🇪,10353442,monday
+Vietnam,False,331212.0,🇻🇳,97338583,monday
+Qatar,False,11586.0,🇶🇦,2881060,sunday
+Brazil,False,8515767.0,🇧🇷,212559409,monday
+Finland,False,338424.0,🇫🇮,5530719,monday
+Georgia,False,69700.0,🇬🇪,3714000,monday
+Senegal,False,196722.0,🇸🇳,16743930,monday
+South Korea,False,100210.0,🇰🇷,51780579,monday
+Anguilla,False,91.0,🇦🇮,13452,monday
+São Tomé and Príncipe,False,964.0,🇸🇹,219161,monday
+Antarctica,False,14000000.0,🇦🇶,1000,monday
+Guyana,False,214969.0,🇬🇾,786559,monday
+Nauru,False,21.0,🇳🇷,10834,monday
+Suriname,False,163820.0,🇸🇷,586634,monday
+Cambodia,False,181035.0,🇰🇭,16718971,monday
+Curaçao,False,444.0,🇨🇼,155014,monday
+Maldives,False,300.0,🇲🇻,540542,sunday
+Paraguay,True,406752.0,🇵🇾,7132530,monday
+Peru,False,1285216.0,🇵🇪,32971846,monday
+France,False,551695.0,🇫🇷,67391582,monday
+Falkland Islands,False,12173.0,🇫🇰,2563,monday
+Uzbekistan,True,447400.0,🇺🇿,34232050,monday
+Egypt,False,1002450.0,🇪🇬,102334403,sunday
+United States Minor Outlying Islands,False,34.2,🇺🇲,300,monday
+Dominica,False,751.0,🇩🇲,71991,monday
+Israel,False,20770.0,🇮🇱,9216900,sunday
+Monaco,False,2.02,🇲🇨,39244,monday
+Republic of the Congo,False,342000.0,🇨🇬,5657000,monday
+Ireland,False,70273.0,🇮🇪,4994724,monday
+French Southern and Antarctic Lands,False,7747.0,🇹🇫,400,monday
+Kazakhstan,True,2724900.0,🇰🇿,18754440,monday
+Malaysia,False,330803.0,🇲🇾,32365998,sunday
+United Arab Emirates,False,83600.0,🇦🇪,9890400,sunday
+Czechia,True,78865.0,🇨🇿,10698896,monday
+Yemen,False,527968.0,🇾🇪,29825968,sunday
+Myanmar,False,676578.0,🇲🇲,54409794,monday
+Saint Kitts and Nevis,False,261.0,🇰🇳,53192,monday
+United States Virgin Islands,False,347.0,🇻🇮,106290,monday
+French Polynesia,False,4167.0,🇵🇫,280904,monday
+Fiji,False,18272.0,🇫🇯,896444,monday
+Albania,False,28748.0,🇦🇱,2837743,monday
+Isle of Man,False,572.0,🇮🇲,85032,monday
+Australia,False,7692024.0,🇦🇺,25687041,monday
+Caribbean Netherlands,False,328.0,🇧🇶,25987,monday
+Italy,False,301336.0,🇮🇹,59554023,monday
+Afghanistan,True,652230.0,🇦🇫,40218234,monday
+Kyrgyzstan,True,199951.0,🇰🇬,6591600,monday
+Wallis and Futuna,False,142.0,🇼🇫,11750,monday
+United States,False,9372610.0,🇺🇸,329484123,sunday
+Martinique,False,1128.0,🇲🇶,378243,monday
+Philippines,False,342353.0,🇵🇭,109581085,monday
+Serbia,True,88361.0,🇷🇸,6908224,monday
+"Saint Helena, Ascension and Tristan da Cunha",False,394.0,🇸🇭,53192,monday
+British Indian Ocean Territory,False,60.0,🇮🇴,3000,monday
+Moldova,True,33846.0,🇲🇩,2617820,monday
+Hong Kong,False,1104.0,🇭🇰,7500700,monday
+Pakistan,False,881912.0,🇵🇰,220892331,monday
+Saudi Arabia,False,2149690.0,🇸🇦,34813867,sunday
+Angola,False,1246700.0,🇦🇴,32866268,monday
+New Caledonia,False,18575.0,🇳🇨,271960,monday
+Lithuania,False,65300.0,🇱🇹,2794700,monday
+Netherlands,False,41850.0,🇳🇱,16655799,monday
+Greenland,False,2166086.0,🇬🇱,56367,monday
+Vatican City,True,0.44,🇻🇦,451,monday
+Micronesia,False,702.0,🇫🇲,115021,monday
+Heard Island and McDonald Islands,False,412.0,🇭🇲,0,monday
+Kuwait,False,17818.0,🇰🇼,4270563,sunday
+Switzerland,True,41284.0,🇨🇭,8654622,monday
+Saint Lucia,False,616.0,🇱🇨,183629,monday
+Turks and Caicos Islands,False,948.0,🇹🇨,38718,monday
+Malta,False,316.0,🇲🇹,525285,monday
+Tonga,False,747.0,🇹🇴,105697,monday
+Guatemala,False,108889.0,🇬🇹,16858333,monday
+Uganda,True,241550.0,🇺🇬,45741000,monday
+Guinea,False,245857.0,🇬🇳,13132792,monday
+American Samoa,False,199.0,🇦🇸,55197,monday
+Sint Maarten,False,34.0,🇸🇽,40812,monday
+Nepal,True,147181.0,🇳🇵,29136808,sunday
+Slovenia,False,20273.0,🇸🇮,2100126,monday
+British Virgin Islands,False,151.0,🇻🇬,30237,monday
+Ethiopia,True,1104300.0,🇪🇹,114963583,monday
+Kiribati,False,811.0,🇰🇮,119446,monday
+Guam,False,549.0,🇬🇺,168783,monday
+Togo,False,56785.0,🇹🇬,8278737,monday
+Papua New Guinea,False,462840.0,🇵🇬,8947027,monday
+Iceland,False,103000.0,🇮🇸,366425,monday
+Northern Mariana Islands,False,464.0,🇲🇵,57557,monday
+Austria,True,83871.0,🇦🇹,8917205,monday
+Morocco,False,446550.0,🇲🇦,36910558,monday
+South Georgia,False,3903.0,🇬🇸,30,monday
+Iraq,False,438317.0,🇮🇶,40222503,sunday
+Liechtenstein,True,160.0,🇱🇮,38137,monday
+Dominican Republic,False,48671.0,🇩🇴,10847904,monday
+Ecuador,False,276841.0,🇪🇨,17643060,monday
+Sierra Leone,False,71740.0,🇸🇱,7976985,monday
+Belize,False,22966.0,🇧🇿,397621,monday
+Bhutan,True,38394.0,🇧🇹,771612,monday
+Iran,False,1648195.0,🇮🇷,83992953,saturday
+Bolivia,True,1098581.0,🇧🇴,11673029,monday
+Turkey,False,783562.0,🇹🇷,84339067,monday
+Faroe Islands,False,1393.0,🇫🇴,48865,monday
+Saint Barthélemy,False,21.0,🇧🇱,4255,monday
+Greece,False,131990.0,🇬🇷,10715549,monday
+India,False,3287590.0,🇮🇳,1380004385,monday
+Nicaragua,False,130373.0,🇳🇮,6624554,monday
+Central African Republic,True,622984.0,🇨🇫,4829764,monday
+DR Congo,False,2344858.0,🇨🇩,108407721,monday
+Mali,True,1240192.0,🇲🇱,20250834,monday
+Azerbaijan,True,86600.0,🇦🇿,10110116,monday
+Singapore,False,710.0,🇸🇬,5685807,monday
+Cuba,False,109884.0,🇨🇺,11326616,monday
+Bangladesh,False,147570.0,🇧🇩,164689383,sunday
+Marshall Islands,False,181.0,🇲🇭,59194,monday
+Bouvet Island,False,49.0,🇧🇻,0,monday
+Latvia,False,64559.0,🇱🇻,1901548,monday
+Hungary,True,93028.0,🇭🇺,9749763,monday
+Åland Islands,False,1580.0,🇦🇽,29458,monday
+Bulgaria,False,110879.0,🇧🇬,6927288,monday
+Seychelles,False,452.0,🇸🇨,98462,monday
+Cameroon,False,475442.0,🇨🇲,26545864,monday
+Macau,False,30.0,🇲🇴,649342,monday
+Mexico,False,1964375.0,🇲🇽,128932753,monday
+Brunei,False,5765.0,🇧🇳,437483,monday
+Taiwan,False,36193.0,🇹🇼,23503349,monday
+Aruba,False,180.0,🇦🇼,106766,monday
+Trinidad and Tobago,False,5130.0,🇹🇹,1399491,monday
+Vanuatu,False,12189.0,🇻🇺,307150,monday
+Algeria,False,2381741.0,🇩🇿,44700000,sunday
+Cook Islands,False,236.0,🇨🇰,18100,monday
+Burundi,True,27834.0,🇧🇮,11890781,monday
+Belarus,True,207600.0,🇧🇾,9398861,monday
+North Korea,False,120538.0,🇰🇵,25778815,monday
+Saint Martin,False,53.0,🇲🇫,38659,monday
+Samoa,False,2842.0,🇼🇸,198410,monday
+Zimbabwe,True,390757.0,🇿🇼,14862927,monday
+Bermuda,False,54.0,🇧🇲,63903,monday
+Djibouti,False,23200.0,🇩🇯,988002,monday
+United Kingdom,False,242900.0,🇬🇧,67215293,monday
+Niue,False,260.0,🇳🇺,1470,monday
+Guinea-Bissau,False,36125.0,🇬🇼,1967998,monday
+Japan,False,377930.0,🇯🇵,125836021,monday
+Tuvalu,False,26.0,🇹🇻,11792,monday
+Réunion,False,2511.0,🇷🇪,840974,monday
+Sudan,False,1886068.0,🇸🇩,43849269,monday
+North Macedonia,True,25713.0,🇲🇰,2077132,monday
+Canada,False,9984670.0,🇨🇦,38005238,sunday
+Indonesia,False,1904569.0,🇮🇩,273523621,monday
+Gambia,False,10689.0,🇬🇲,2416664,monday
+Somalia,False,637657.0,🇸🇴,15893219,monday
+Mauritius,False,2040.0,🇲🇺,1265740,monday
+Montserrat,False,102.0,🇲🇸,4922,monday
+Russia,False,17098242.0,🇷🇺,144104080,monday
+Portugal,False,92090.0,🇵🇹,10305564,monday
+Oman,False,309500.0,🇴🇲,5106622,sunday
+Christmas Island,False,135.0,🇨🇽,2072,monday
+Croatia,False,56594.0,🇭🇷,4047200,monday
+Mongolia,True,1564110.0,🇲🇳,3278292,monday
+Tajikistan,True,143100.0,🇹🇯,9537642,monday
+Solomon Islands,False,28896.0,🇸🇧,686878,monday
+Haiti,False,27750.0,🇭🇹,11402533,monday
+Honduras,False,112492.0,🇭🇳,9904608,monday
+Namibia,False,825615.0,🇳🇦,2540916,monday
+Argentina,False,2780400.0,🇦🇷,45376763,monday
+Niger,True,1267000.0,🇳🇪,24206636,monday
+Timor-Leste,False,14874.0,🇹🇱,1318442,monday
+Western Sahara,False,266000.0,🇪🇭,510713,monday
+Uruguay,False,181034.0,🇺🇾,3473727,monday
+Barbados,False,430.0,🇧🇧,287371,monday
+Guernsey,False,78.0,🇬🇬,62999,monday
+Estonia,False,45227.0,🇪🇪,1331057,monday
+Kenya,False,580367.0,🇰🇪,53771300,monday
+Jamaica,False,10991.0,🇯🇲,2961161,monday
+Luxembourg,True,2586.0,🇱🇺,632275,monday
+Guadeloupe,False,1628.0,🇬🇵,400132,monday
+Tunisia,False,163610.0,🇹🇳,11818618,monday
+Cayman Islands,False,264.0,🇰🇾,65720,monday
+Mozambique,False,801590.0,🇲🇿,31255435,monday
+Tokelau,False,12.0,🇹🇰,1411,monday
+Germany,False,357114.0,🇩🇪,83240525,monday
+Liberia,False,111369.0,🇱🇷,5057677,monday
+Pitcairn Islands,False,47.0,🇵🇳,56,monday
+Saint Pierre and Miquelon,False,242.0,🇵🇲,6069,monday
+South Sudan,True,619745.0,🇸🇸,11193729,sunday
+Slovakia,True,49037.0,🇸🇰,5458827,monday
+Palau,False,459.0,🇵🇼,18092,monday
+Cyprus,False,9251.0,🇨🇾,1207361,monday
+Libya,False,1759540.0,🇱🇾,6871287,sunday
+Mayotte,False,374.0,🇾🇹,226915,monday
+Turkmenistan,True,488100.0,🇹🇲,6031187,monday
+Equatorial Guinea,False,28051.0,🇬🇶,1402985,monday
+Nigeria,False,923768.0,🇳🇬,206139587,monday
+Norway,False,323802.0,🇳🇴,5379475,monday
+Bosnia and Herzegovina,False,51209.0,🇧🇦,3280815,monday
+South Africa,False,1221037.0,🇿🇦,59308690,monday
+Denmark,False,43094.0,🇩🇰,5831404,monday
+Laos,True,236800.0,🇱🇦,7275556,monday
+Madagascar,False,587041.0,🇲🇬,27691019,monday
+El Salvador,False,21041.0,🇸🇻,6486201,monday
+Andorra,True,468.0,🇦🇩,77265,monday
+Sri Lanka,False,65610.0,🇱🇰,21919000,monday
+Rwanda,True,26338.0,🇷🇼,12952209,monday
+Armenia,True,29743.0,🇦🇲,2963234,monday
+Chad,True,1284000.0,🇹🇩,16425859,monday
+Benin,False,112622.0,🇧🇯,12123198,monday
+Syria,False,185180.0,🇸🇾,17500657,monday
+Spain,False,505992.0,🇪🇸,47351567,monday
+Thailand,False,513120.0,🇹🇭,69799978,monday
+Svalbard and Jan Mayen,False,-1.0,🇸🇯,2562,monday
+Ukraine,False,603500.0,🇺🇦,44134693,monday
+China,False,9706961.0,🇨🇳,1402112000,monday
+Malawi,True,118484.0,🇲🇼,19129955,monday
+Panama,False,75417.0,🇵🇦,4314768,monday
+Bahrain,False,765.0,🇧🇭,1701583,monday
+Saint Vincent and the Grenadines,False,389.0,🇻🇨,110947,monday
+Jersey,False,116.0,🇯🇪,100800,monday
+Burkina Faso,True,272967.0,🇧🇫,20903278,monday
+Poland,False,312679.0,🇵🇱,37950802,monday
+Belgium,False,30528.0,🇧🇪,11555997,monday
+Bahamas,False,13943.0,🇧🇸,393248,monday
+Costa Rica,False,51100.0,🇨🇷,5094114,monday
+San Marino,True,61.0,🇸🇲,33938,monday
+New Zealand,False,270467.0,🇳🇿,5084300,monday
+French Guiana,False,83534.0,🇬🇫,254541,monday
+Norfolk Island,False,36.0,🇳🇫,2302,monday
+Lebanon,False,10452.0,🇱🇧,6825442,monday
+Zambia,True,752612.0,🇿🇲,18383956,monday
+Eswatini,True,17364.0,🇸🇿,1160164,monday
+Palestine,False,6220.0,🇵🇸,4803269,sunday
