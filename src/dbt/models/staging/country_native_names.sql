@@ -25,5 +25,5 @@ final as (
         join languages on raw_native_names.language_code = languages.lang_code
 )
 
-select * from languages
+select * from final
 

@@ -102,10 +102,10 @@ models:
   - name: country_native_names
     description: List of native names of country
 
-    # required for constraint
-    # config:
-    #   contract:
-    #     enforced: true
+    #required for constraint
+    config:
+      contract:
+        enforced: true
 
     database: countries
     schema: staging
@@ -128,7 +128,7 @@ models:
         constraints:
           - type: not_null
 
-      - name: language
+      - name: language_name
         description: Language of native name
         data_type: text
         constraints:
@@ -140,7 +140,7 @@ models:
         constraints:
           - type: not_null
           - type: foreign_key
-            expression: "staging.languages (lang_code)"
+            expression: "staging.languages_table (lang_code)"
       
       - name: country_id
         description: Unique id (integer) from country
@@ -152,7 +152,7 @@ models:
 
   - name: codes
     description: List of codes a country is referred to
-      # required for constraint
+    # required for constraint
     config:
       contract:
         enforced: true
