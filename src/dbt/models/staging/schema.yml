@@ -129,7 +129,7 @@ models:
           - type: not_null
 
       - name: language
-        description: Language code of native name
+        description: Language of native name
         data_type: text
         constraints:
           - type: not_null
@@ -150,31 +150,96 @@ models:
           - type: foreign_key
             expression: "staging.countries (country_id)"
 
-      # - name: codes
-      #   description: List of codes a country is referred to
-      #   columns:
-      #     - name: common_name
-      #       description: Common name of country as referred by natives
+  - name: codes
+    description: List of codes a country is referred to
+      # required for constraint
+    config:
+      contract:
+        enforced: true
+    database: countries
+    schema: staging
 
-      #     - name: cca2
-      #       description: ISO 3166-1 alpha-2 two-letter country codes
+    columns:
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+        
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null
+          
 
-      #     - name: ccn3
-      #       description: ISO 3166-1 numeric code (UN M49)
+      - name: cca2
+        description: ISO 3166-1 alpha-2 two-letter country codes
+        data_type: varchar(2)
+        constraints:
+          - type: not_null
 
-      #     - name: cca3
-      #       description: ISO 3166-1 alpha-3 three-letter country codes
+      - name: ccn3
+        description: ISO 3166-1 numeric code (UN M49)
+        data_type: varchar(3)
+        
 
-      #     - name: cioc
-      #       description: Code of the International Olympic Committee
+      - name: cca3
+        description: ISO 3166-1 alpha-3 three-letter country codes
+        data_type: varchar(3)
+        constraints:
+          - type: not_null
 
-      #     - name: fifa
-      #       description: FIFA code
+      - name: cioc
+        description: Code of the International Olympic Committee
+        data_type: varchar(3)
+        
 
-      #     - name: status
-      #       description: ISO 3166-1 assignment status
-       
+      - name: fifa
+        description: FIFA code
+        data_type: varchar(3)
+        
 
+      - name: status
+        description: ISO 3166-1 assignment status
+        data_type: text
+        constraints:
+          - type: not_null
+
+  - name: alternative_spellings
+    description: 'Details on countries aliases'
+    # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null      
+
+      - name: alt_spellings  
+        description: 'Alternative spelling for the common name' 
+        data_type: VARCHAR(255)
+        constraints:
+          - type: not_null      
+
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+        
+
+      
+        
+        
 
 sources:
   - name: raw
