@@ -1,7 +1,7 @@
 
 
-<!-- 
-<details>
+
+<!-- <details>
   <summary><strong>English</strong></summary><br /> -->
 
 # Welcome to **countries_dw**
@@ -231,9 +231,20 @@ Seeded files were declared as source in the [model schema](src\dbt\models\stagin
 </details>
 
 
+<details>
+  <summary><strong> Difficulties found along project </strong></summary><br />
+  
+  I found difficult understanding how seeds, sources and models worked on dbt.
+  Also, I learned the hard way why the convention for naming models is <schema>_<model_name>. 
+  I had some names conflicts because I wanted to name a source and a model with the name "languages".
+  But dbt uses the same function('ref') to refer both to sources and models. 
+
+  Also learned the <-- depends_on: {{ ref('model') }}> hint to resolve dependencies in models.
+  Because of concurrency sometimes, a model started to run before its dependencies were created, so this causes an error.
+  But it can be solved with the depends on hint.
 
 
-
+</details>
 
 
 ### Next steps
@@ -242,6 +253,7 @@ Seeded files were declared as source in the [model schema](src\dbt\models\stagin
 - [x] Set up a PostgreSQL database to store table
 - [x] Create data model and documentation
 - [ ] Finish model creation and docs
+- [ ] Create a airflow instance to orchestrate tasks
 - [ ] Start data visualization for countries_dw
 
 
@@ -267,5 +279,12 @@ Seeded files were declared as source in the [model schema](src\dbt\models\stagin
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+<p align="left"> 
+<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
+<a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> 
+<a href="https://www.getdbt.com/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/18339788?s=280&v=4" alt="dbt" width="40" height="40"/> </a> 
+<a href="https://python-poetry.org/" target="_blank" rel="noreferrer"> <img src="https://python-poetry.org/images/logo-origami.svg" alt="poetry" width="40" height="40"/> </a> 
+<a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> 
+</p>
 
+<!-- </details> -->
