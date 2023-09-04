@@ -208,7 +208,7 @@ hook = (CountriesHook()
             .save_tables(file_format, destination='C:\Git\countries_dw\src\dbt\seeds', index=False)
       )
 ```
-Then in seed folder, a [properties.yml file](src\dbt\seeds\properties.yml) was configured to load data and omitit seeds from documetation using the format below:
+Then in seed folder, a [properties.yml file](src\dbt\seeds\properties.yml) was configured to load data and hide seeds from documetation using the format below:
 
 ```yml
 version: 2
@@ -232,10 +232,10 @@ Seeded files were declared as source in the [model schema](src\dbt\models\stagin
 
 
 <details>
-  <summary><strong> Difficulties found along project </strong></summary><br />
+  <summary><strong> Difficulties found along this project </strong></summary><br />
   
   I found difficult understanding how seeds, sources and models worked on dbt.
-  Also, I learned the hard way why the convention for naming models is <schema>_<model_name>. 
+  I learned the hard way why the convention for naming models is \<schema>_<model_name>. 
   I had some names conflicts because I wanted to name a source and a model with the name "languages".
   But dbt uses the same function('ref') to refer both to sources and models. 
 
@@ -254,6 +254,7 @@ Seeded files were declared as source in the [model schema](src\dbt\models\stagin
 - [x] Create data model and documentation
 - [ ] Finish model creation and docs
 - [ ] Create a airflow instance to orchestrate tasks
+- [ ] Deploy project using docker 
 - [ ] Start data visualization for countries_dw
 
 

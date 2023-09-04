@@ -150,7 +150,7 @@ models:
           - type: foreign_key
             expression: "staging.countries (country_id)"
 
-  - name: codes
+  - name: codes_by_country
     description: List of codes a country is referred to
     # required for constraint
     config:
@@ -235,11 +235,129 @@ models:
           - type: not_null
           - type: foreign_key
             expression: "staging.countries (country_id)"
-        
+
+
+  - name: regions_and_continents
+    description: 'Dimension table on regions, subregions and continents'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: region_id
+        description: Unique id for a region
+        data_type: int
+        constraints:
+          - type: primary_key  
+
+      - name: continent
+        description: Name of continent 
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: region
+        description: Name of region
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: subregion
+        description: Name of subregion
+        data_type: text
+        constraints:
+          - type: not_null   
+
+  - name: regions_and_continents_by_country
+    description: 'Details on regions, subregions and continents for countries'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: continent
+        description: Name of continent 
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: region
+        description: Name of region
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: subregion
+        description: Name of subregion
+        data_type: text
+        constraints:
+          - type: not_null   
+
+      - name: region_id
+        description: Unique region id for country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.regions_and_continents (region_id)" 
+
+
+  - name: borders_by_country
+    description: 'Details on border for each country'
+    #required for constraint
+    # config:
+    #   contract:
+    #     enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: cca3_border
+        description: Alpha3 code for border country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: country_border
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
 
       
         
-        
+
+
+
+
+
+#### raw sources
 
 sources:
   - name: raw
