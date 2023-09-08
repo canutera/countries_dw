@@ -319,9 +319,9 @@ models:
   - name: borders_by_country
     description: 'Details on border for each country'
     #required for constraint
-    # config:
-    #   contract:
-    #     enforced: true
+    config:
+      contract:
+        enforced: true
 
     columns:
       - name: country_id
@@ -349,6 +349,161 @@ models:
         constraints:
           - type: not_null  
 
+  - name: capitals
+    description: 'Details on capitals for each country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: capital
+        description: Name of capital
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: latitude
+        description: latitude coordinates of capital
+        data_type: decimal
+        constraints:
+          - type: not_null  
+      
+      - name: longitude
+        description: latitude coordinates of capital
+        data_type: decimal
+        constraints:
+          - type: not_null  
+
+  - name: idds_by_country
+    description: 'Details on International direct dialing codes'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: root
+        description: Root for idd
+        data_type: text
+        
+
+      - name: suffixes
+        description: Suffix for idd
+        data_type: text
+  
+  - name: currencies_by_country
+    description: 'Details on currencies'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: currency_code
+        description: Alpha 3 code for currency
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: currency_name
+        description: Name of currency in english
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: symbol
+        description: Symbol used to represent currency
+        data_type: text
+        
+   
+  - name: flags_and_coat_of_arms
+    description: 'List with flag and coat of arms links to png and svg formats'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: flag_description
+        description: Visual description of flag
+        data_type: text
+
+      - name: png_flag
+        description: png image link to flag
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: svg_flag
+        description: svg image link to flag
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: png_coarms
+        description: png image link to coat of arms
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: svg_coarms
+        description: svg image link to coat of arms
+        data_type: text
+        constraints:
+          - type: not_null 
 
       
         
