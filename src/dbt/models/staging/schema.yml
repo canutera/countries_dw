@@ -35,6 +35,17 @@ models:
         constraints:
           - type: not_null
         
+      - name: latitude
+        description: latitude coordinate
+        data_type: decimal
+        constraints:
+          - type: not_null
+
+      - name: longitude
+        description: longitude coordinate
+        data_type: decimal
+        constraints:
+          - type: not_null
 
   - name: languages_table
     description: List of official languages
@@ -236,7 +247,6 @@ models:
           - type: foreign_key
             expression: "staging.countries (country_id)"
 
-
   - name: regions_and_continents
     description: 'Dimension table on regions, subregions and continents'
     #required for constraint
@@ -314,7 +324,6 @@ models:
         constraints:
           - type: foreign_key  
             expression: "staging.regions_and_continents (region_id)" 
-
 
   - name: borders_by_country
     description: 'Details on border for each country'
@@ -455,13 +464,12 @@ models:
         description: Symbol used to represent currency
         data_type: text
         
-   
   - name: flags_and_coat_of_arms
-    description: 'List with flag and coat of arms links to png and svg formats'
+    description: 'How citizens are called for each country'
     #required for constraint
-    config:
-      contract:
-        enforced: true
+    # config:
+    #   contract:
+    #     enforced: true
 
     columns:
       - name: country_id
@@ -505,15 +513,322 @@ models:
         constraints:
           - type: not_null 
 
+  - name: demonyms_by_country
+    description: 'List with flag and coat of arms links to png and svg formats'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
       
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null     
         
+      - name: demonym
+        description: demonym in english
+        data_type: text
+        constraints:
+          - type: not_null     
 
+  - name: map_links
+    description: 'Links to google maps and open street maps by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
 
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null     
+      
+      - name: open_street_maps
+        description: Open street maps link to country
+        data_type: text
+        constraints:
+          - type: not_null     
 
+      - name: google_maps
+        description: Google maps link to country
+        data_type: text
+        constraints:
+          - type: not_null     
+
+  - name: car_info
+    description: 'Side of driving and signs info by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: side
+        description: Side of road that cars drive
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: signs
+        description: Signs format
+        data_type: text
+       
+  - name: translated_names
+    description: 'Side of driving and signs info by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: official
+        description: official name translated
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: common
+        description: common name translated
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: language_code
+        description: common name translated
+        data_type: text
+        constraints:
+          - type: foreign_key
+            expression: "staging.languages_table (lang_code)" 
+      
+      - name: language_name
+        description: name of language that names are translated
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: domains
+    description: 'Top level domains for each country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: tld
+        description: top level domains assigned for country
+        data_type: text
+        constraints:
+          - type: not_null 
+  
+  - name: timezones_by_country
+    description: 'Timezone info by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: timezones
+        description: timezone info
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: independency_un_membership
+    description: 'Information on independency status and United Nations Membership'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: independent
+        description: independency status
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: 'unMember'
+        description: Un membership status
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: gini_index_by_country
+    description: "The Gini index, or Gini co-efficient, measures income distribution across a population. 
+    
+    Developed by Italian statistician Corrado Gini in 1912, it often serves as a gauge of economic inequality, 
+    measuring income distribution or, less commonly, wealth distribution among a population.
+    
+    The co-efficient ranges from 0 (or 0%) to 1 (or 100%), with 0 representing perfect equality and 1 representing perfect inequality. 
+    Values greater than 1 are theoretically possible due to negative income or wealth."
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: year
+        description: year for gini index
+        data_type: int
+        constraints:
+          - type: not_null 
+
+      - name: index
+        description: value of gini index
+        data_type: decimal
+        constraints:
+          - type: not_null 
+
+  - name: general_infos
+    description: 'General information about country. Contains '
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: flag_emoji
+        description: Flag emoji of country
+        data_type: text
+        constraints:
+          - type: not_null 
+          
+      - name: area
+        description: Geographical size (unit not informed)
+        data_type: decimal
+        constraints:
+          - type: not_null 
+
+      - name: landlocked
+        description: If country has access to sea
+        data_type: boolean
+        constraints:
+          - type: not_null 
+
+      - name: population
+        description: Size of population
+        data_type: int
+        constraints:
+          - type: not_null 
+
+      - name: start_of_week
+        description: Day considered start of week 
+        data_type: TEXT
+        constraints:
+          - type: not_null 
 
 
 #### raw sources
-
 sources:
   - name: raw
     description: raw data recieved from countries api
