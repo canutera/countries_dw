@@ -15,6 +15,11 @@ dbt-core = "^1.6.0"
 dbt-postgres = "^1.6.0"
 
 
+[[tool.poetry.source]]
+name = "fpho"
+url = "https://files.pythonhosted.org"
+priority = "primary"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
