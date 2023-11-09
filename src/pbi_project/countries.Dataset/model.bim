@@ -1,0 +1,2682 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.120.963.0 (23.08)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"dim_countries\",\"dim_regions\",\"dim_languages\",\"f_flags\",\"f_translations\",\"f_timezones\",\"f_regions\",\"f_languages\",\"f_maps\",\"f_independent\",\"f_idds\",\"f_gini_index\",\"f_general_infos\",\"f_domains\",\"f_demonyms\",\"f_currencies\",\"f_codes\",\"f_car_info\",\"f_capitals\",\"f_borders\",\"f_alternative_spellings\",\"f_native_names\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "queryGroups": [
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "dimensions"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "1"
+          }
+        ],
+        "folder": "facts"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "0f519263-7428-458d-a5f8-644369e976c1",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "language_code",
+        "fromTable": "f_translations",
+        "toColumn": "lang_code",
+        "toTable": "dim_languages"
+      },
+      {
+        "name": "e780b3de-9c39-427c-850f-e089eddd9e13",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_translations",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "dca74802-76ad-45ec-b51b-de28f468ee57",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_timezones",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "b4b919f6-734d-4198-b4fb-403b58dd7147",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "region_id",
+        "fromTable": "f_regions",
+        "toColumn": "region_id",
+        "toTable": "dim_regions"
+      },
+      {
+        "name": "daf875e7-823d-42ab-aaa7-c0567abcd796",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_regions",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "dae17669-0f4f-40f8-93ef-d5b06f8c7d8a",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "lang_code",
+        "fromTable": "f_languages",
+        "toColumn": "lang_code",
+        "toTable": "dim_languages"
+      },
+      {
+        "name": "787f406d-13b6-4a36-9be0-f349d2e20265",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_languages",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "00d85822-7eb6-41d4-ad0b-c3a217202ea5",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "country_id",
+        "fromTable": "f_maps",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "04411c27-46fe-49e8-a41d-562739842dcd",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "country_id",
+        "fromTable": "f_independent",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "7c818ff7-c8ee-42a2-8a04-ed7d15860705",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_idds",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "60b8bba6-d8d0-4599-bab6-7b077b804cd1",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "country_id",
+        "fromTable": "f_gini_index",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "3f627f8f-b6a0-4857-b458-97c5cd18ca3d",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "country_id",
+        "fromTable": "f_general_infos",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "bcc4787b-2d1d-4daa-b6ba-62f7764b0e34",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_domains",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "8a390cd5-3706-4c6f-a563-a31e8d45e8be",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_demonyms",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "166892a0-5cf9-4acc-866b-7ae9d20e841e",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_currencies",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "f0aad09e-31b9-49c1-a01d-53059964e02f",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "country_id",
+        "fromTable": "f_codes",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "1c5686c9-a8dd-44b4-ac8e-405bba6a4639",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_car_info",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "f2fde5ba-fced-47ca-9b7b-04fe8b20704e",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_capitals",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "b88a7003-258b-4fdf-8bdb-b54abf9a6f0e",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_borders",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "80c05222-9db6-4699-a826-ab5bcab44c7a",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_alternative_spellings",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      },
+      {
+        "name": "11774baa-88b1-4c21-8486-a0e2156ec056",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "lang_code",
+        "fromTable": "f_native_names",
+        "toColumn": "lang_code",
+        "toTable": "dim_languages"
+      },
+      {
+        "name": "b541f0ca-fa3e-474b-b9bd-1f6373e3f99d",
+        "annotations": [
+          {
+            "name": "PBI_IsFromSource",
+            "value": "FS"
+          }
+        ],
+        "fromColumn": "country_id",
+        "fromTable": "f_native_names",
+        "toColumn": "country_id",
+        "toTable": "dim_countries"
+      }
+    ],
+    "sourceQueryCulture": "pt-BR",
+    "tables": [
+      {
+        "name": "dim_countries",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isKey": true,
+            "lineageTag": "356b6c1c-73e3-4dcc-8ff7-16e6c9ee83b0",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "common_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDefaultLabel": true,
+            "lineageTag": "cf7aa4bb-cf28-4d95-b990-b6ae0b5e0851",
+            "sourceColumn": "common_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "official_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ce9eb14b-598a-4027-98e1-453e5e562c5c",
+            "sourceColumn": "official_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dcad8143-94a6-4c0f-acc3-5a955823823c",
+            "sourceColumn": "latitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "4c174ad4-e0da-40cc-8541-81a78ef0a2b9",
+            "sourceColumn": "longitude",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "b91eb9bb-e645-4be9-9baa-729842e3bcd9",
+        "partitions": [
+          {
+            "name": "dim_countries",
+            "mode": "import",
+            "queryGroup": "dimensions",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_countries = Source{[Schema=\"staging\",Item=\"countries\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_countries,{\"country_id\", \"common_name\", \"official_name\", \"latitude\", \"longitude\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_4d02cc07-09ef-4de1-8129-f866192d9a01",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "64b39ee6-17d2-4faa-8315-01ac1d82127e",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "807923b0-4442-45ae-9085-8ff2f349743a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "3fb99bd2-4808-48dc-9239-2ecdd44e753f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "c6f47de2-5d44-4290-b969-7330673fb1a8",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "dbcb241e-f06b-49ca-ba96-1ba053bd354d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "6c715652-cc53-4cd6-a597-05c3145b2157",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d9472905-f039-4230-87b1-1c9f43b91c50",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "4eed093c-b8c6-4988-9f41-a5c0fdce1865",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "1de9e7fe-8dfa-44bf-b596-e5cae8d7d919",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "6a59dc67-934a-4ffa-90a4-8b7142c50636",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "2392cf2b-2d4d-4518-b1e6-7aac416f68ee",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "f9a4a45c-ee45-4019-a575-0127c7042685"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "5dd29226-69ed-4dad-990a-c0c54a62d67d",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_4d02cc07-09ef-4de1-8129-f866192d9a01",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_regions",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "region_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "14daa51b-73c2-4b74-abe0-6b41e659cbcf",
+            "sourceColumn": "region_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "continent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "382a2656-7db7-4eb4-bc40-bdea8e1d3160",
+            "sourceColumn": "continent",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eaeb8754-7488-4428-8122-bc2e03861a00",
+            "sourceColumn": "region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "subregion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e23c5506-d7bc-49a4-91ad-9ec4d50e9754",
+            "sourceColumn": "subregion",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "080f1e11-7b4d-4d93-a305-0ab392153d2e",
+        "partitions": [
+          {
+            "name": "dim_regions",
+            "mode": "import",
+            "queryGroup": "dimensions",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_regions_and_continents = Source{[Schema=\"staging\",Item=\"regions_and_continents\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_regions_and_continents,{\"region_id\", \"continent\", \"region\", \"subregion\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_languages",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "lang_code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1adc7215-4767-4e2d-a551-38252f8c4fa1",
+            "sourceColumn": "lang_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "language_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cb74a997-6101-418b-a35c-ae126867bf2c",
+            "sourceColumn": "language_name",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3d5eef00-511c-4084-8962-a8f457e77fc8",
+        "partitions": [
+          {
+            "name": "dim_languages",
+            "mode": "import",
+            "queryGroup": "dimensions",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_languages_table = Source{[Schema=\"staging\",Item=\"languages_table\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_languages_table,{\"lang_code\", \"language_name\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_flags",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "97b379fe-a539-49aa-b90f-8dddac5fb6e3",
+            "sourceColumn": "country_id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "90db2c99-c197-4d2e-a4d4-84930c2c8de8",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "flag_description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "63bab0f1-44d4-420d-86b3-5d7214fa7eb0",
+            "sourceColumn": "flag_description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "png_flag",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2d94368e-8657-4079-9c0f-1baf509b9e57",
+            "sourceColumn": "png_flag",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "svg_flag",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b9189f60-1d31-402d-9203-2757cbc2c971",
+            "sourceColumn": "svg_flag",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "png_coarms",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "68e35841-8373-468e-bfe5-1969332da67c",
+            "sourceColumn": "png_coarms",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "svg_coarms",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "21d7412f-57d1-4cfd-8dca-e3346b423ee7",
+            "sourceColumn": "svg_coarms",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8333e5de-a892-4035-9a4a-592225faff27",
+        "partitions": [
+          {
+            "name": "f_flags",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_flags_and_coat_of_arms = Source{[Schema=\"staging\",Item=\"flags_and_coat_of_arms\"]}[Data]",
+                "in",
+                "    staging_flags_and_coat_of_arms"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_translations",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "08858467-f50f-42c2-bf0e-f9fd595c9e35",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1ec790d4-331b-4441-965a-19426db18e3c",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "official",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9e8db69b-eee7-49b4-9071-7ad8a0e70355",
+            "sourceColumn": "official",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "common",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "38972a0c-3250-4282-8202-c83b2a004432",
+            "sourceColumn": "common",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "language_code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a72af698-b052-4773-a2e2-ce0292de267f",
+            "sourceColumn": "language_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "language_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d4c6dda1-ac1e-427d-849d-2e354e51d363",
+            "sourceColumn": "language_name",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "825ee9ae-70b2-4f27-b116-ea69015104cc",
+        "partitions": [
+          {
+            "name": "f_translations",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_translated_names = Source{[Schema=\"staging\",Item=\"translated_names\"]}[Data]",
+                "in",
+                "    staging_translated_names"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_timezones",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f5d80a8a-5783-46bc-826b-eb23c8e47d23",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5024c086-d5e4-4052-8bd1-63ef17d2ee94",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "timezones",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0e3d3b61-4202-4ae5-8e23-9c943ae0b47d",
+            "sourceColumn": "timezones",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6b36940d-7f94-42ed-8769-ddfa821aa66d",
+        "partitions": [
+          {
+            "name": "f_timezones",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_timezones_by_country = Source{[Schema=\"staging\",Item=\"timezones_by_country\"]}[Data]",
+                "in",
+                "    staging_timezones_by_country"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_regions",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7df39a04-04b9-4816-8574-14b6c90093c3",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ca738923-5379-415c-8482-d286a3644feb",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "continent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "84364b54-56aa-43ad-a021-b7d8859ddd2c",
+            "sourceColumn": "continent",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e4668d27-db46-4eb0-a3f2-8c01ad8a41ea",
+            "sourceColumn": "region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "subregion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9edecc3e-3864-4768-b14e-7c575441a00c",
+            "sourceColumn": "subregion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "region_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c6c165c3-5e91-49f0-a387-9b9ce29f4a4a",
+            "sourceColumn": "region_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8ce8c32f-6d83-4dae-b212-24444f9d7d47",
+        "partitions": [
+          {
+            "name": "f_regions",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_regions_and_continents_by_country = Source{[Schema=\"staging\",Item=\"regions_and_continents_by_country\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_regions_and_continents_by_country,{\"country_id\", \"country\", \"continent\", \"region\", \"subregion\", \"region_id\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_languages",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b4935910-6ea3-466c-b37f-3f0ad16fa735",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f6f4793b-42a2-4230-8eb9-a373b3e8b192",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lang_code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4a9fb5ae-aa09-48d1-9e1e-d6ddfb22ad30",
+            "sourceColumn": "lang_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "language_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "21a38e28-8f79-48fd-888c-d798c3e70c2d",
+            "sourceColumn": "language_name",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ac60593c-f781-47af-b86e-8705fcb874b1",
+        "partitions": [
+          {
+            "name": "f_languages",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_languages_by_country = Source{[Schema=\"staging\",Item=\"languages_by_country\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_languages_by_country,{\"country_id\", \"country\", \"lang_code\", \"language_name\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_maps",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e96eeacf-849a-448f-95dc-856852970fbb",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0a5ba6b4-3676-4390-b553-ba77461db360",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "open_street_maps",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "67813247-bb9b-4016-86c7-e1d580174861",
+            "sourceColumn": "open_street_maps",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "google_maps",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "293bfe1f-31b2-4a5d-b935-4557d0f3d14f",
+            "sourceColumn": "google_maps",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "533232df-a73c-45ac-ae42-8a1711c32e0e",
+        "partitions": [
+          {
+            "name": "f_maps",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_map_links = Source{[Schema=\"staging\",Item=\"map_links\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_map_links,{\"country_id\", \"country\", \"open_street_maps\", \"google_maps\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_independent",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b315f67e-2bb9-4b76-8f4a-07e0bdfd628f",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a44b035f-93f7-4391-87e6-d7626cb8afbc",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "independent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ed06cef4-1abc-4ee2-bfd4-ffce972bf24a",
+            "sourceColumn": "independent",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "unmember",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3efdd669-998a-46c3-83df-7c0f593ba7cf",
+            "sourceColumn": "unmember",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "483ae4e9-4206-4bff-a4ba-89db16495ebe",
+        "partitions": [
+          {
+            "name": "f_independent",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_independency_un_membership = Source{[Schema=\"staging\",Item=\"independency_un_membership\"]}[Data]",
+                "in",
+                "    staging_independency_un_membership"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_idds",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c19f8607-5b05-44eb-a16a-01a6076cc8b4",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ffa8fc1d-da5b-443a-b971-e330373adb6f",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "root",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1dca50a2-5386-4f50-ae74-c4797b871acc",
+            "sourceColumn": "root",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "suffixes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "902c40d9-53c0-4ac7-84dc-6d51f1e37a0f",
+            "sourceColumn": "suffixes",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ed1e3225-ae97-4a43-a0fb-5743be32df70",
+        "partitions": [
+          {
+            "name": "f_idds",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_idds_by_country = Source{[Schema=\"staging\",Item=\"idds_by_country\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_idds_by_country,{\"country_id\", \"country\", \"root\", \"suffixes\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_gini_index",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a3ff9c70-415c-42b1-8459-b4b66fae10d5",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c8320e34-84aa-4f3c-8089-b947d1d98b9b",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fdaa953a-fd77-4e10-a274-e7330c79bd42",
+            "sourceColumn": "year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "index",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7bbf0772-4f0f-471f-b045-efa8b0ebcb40",
+            "sourceColumn": "index",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "216c8ad6-e684-4e8b-afbc-cbb1a9aecbaf",
+        "partitions": [
+          {
+            "name": "f_gini_index",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_gini_index_by_country = Source{[Schema=\"staging\",Item=\"gini_index_by_country\"]}[Data]",
+                "in",
+                "    staging_gini_index_by_country"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_general_infos",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6001d062-f959-4f05-8bed-db5b6e2e07e6",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "24b88f8d-5eba-40f0-a130-7cd2e7e77f16",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "flag_emoji",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e38d8a59-df22-4455-a11b-b9dca9a3d289",
+            "sourceColumn": "flag_emoji",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "area",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "04b3a7d9-2429-4dc6-bfe9-32aca183d099",
+            "sourceColumn": "area",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "landlocked",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "355451d2-bcfb-48bd-a0eb-b72eae62909b",
+            "sourceColumn": "landlocked",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "population",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4794c85a-9600-46b5-9189-5b2045030a59",
+            "sourceColumn": "population",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "start_of_week",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "61c0fa90-d858-4aa4-b1f0-813e4e656c10",
+            "sourceColumn": "start_of_week",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "153297a8-6c2e-40d4-93e6-09d99bf901b7",
+        "partitions": [
+          {
+            "name": "f_general_infos",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_general_infos = Source{[Schema=\"staging\",Item=\"general_infos\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_general_infos,{\"country_id\", \"country\", \"flag_emoji\", \"area\", \"landlocked\", \"population\", \"start_of_week\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_domains",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7de9b61f-a398-4946-9a67-ff54927774ab",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a0be763d-fb69-4976-bab2-9c27bba05c98",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tld",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6e827f11-9cea-45f5-9b53-4bae75ccb26e",
+            "sourceColumn": "tld",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "32f5629b-f17a-4b27-8cd8-161281da019b",
+        "partitions": [
+          {
+            "name": "f_domains",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_domains = Source{[Schema=\"staging\",Item=\"domains\"]}[Data]",
+                "in",
+                "    staging_domains"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_demonyms",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e5b77951-3512-4932-815e-b302859f1eb0",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0ee60b10-1a72-4650-ba94-ce91a2085ee4",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "demonym",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "741b7630-5d81-4488-895d-bd422ac6b165",
+            "sourceColumn": "demonym",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9d0ef63b-8bec-4705-af60-392fe4fc4301",
+        "partitions": [
+          {
+            "name": "f_demonyms",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_demonyms_by_country = Source{[Schema=\"staging\",Item=\"demonyms_by_country\"]}[Data]",
+                "in",
+                "    staging_demonyms_by_country"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_currencies",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e941516a-4f13-4a5a-9c23-4803548b2873",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1a3e4e47-b0bc-4ea5-b048-d8de5c049af4",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "currency_code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3d5e523b-a111-4673-b9c4-0dd42076718d",
+            "sourceColumn": "currency_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "currency_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fe800ef1-176c-4986-a756-7affe576e2ba",
+            "sourceColumn": "currency_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "symbol",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d597e502-fe05-4254-9763-6983374f95c8",
+            "sourceColumn": "symbol",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "dc13d571-10b1-4a6d-b3f8-7a319868d6f8",
+        "partitions": [
+          {
+            "name": "f_currencies",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_currencies_by_country = Source{[Schema=\"staging\",Item=\"currencies_by_country\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_currencies_by_country,{\"country_id\", \"country\", \"currency_code\", \"currency_name\", \"symbol\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_codes",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f34faa46-6483-42da-8348-af6919f5ae6f",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e83d900c-fae0-4aff-915f-b5c03c5dae11",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cca2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "36120535-14ac-4b24-a275-1d5e6c377ab2",
+            "sourceColumn": "cca2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ccn3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b4426057-3b2c-47f1-a0c9-c1f01c1e4cb8",
+            "sourceColumn": "ccn3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cca3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8bc17487-cd6f-41bb-a5bf-74805ffe3f41",
+            "sourceColumn": "cca3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cioc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c3ca66d8-0ca8-4182-8c5c-a686f738fadf",
+            "sourceColumn": "cioc",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fifa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9aece843-30c9-474c-ad53-ce54b7e9efcd",
+            "sourceColumn": "fifa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bc2e2f80-1404-4994-a908-e53ade18af4c",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "60d60427-5d07-4d90-a38e-72c04722ea4e",
+        "partitions": [
+          {
+            "name": "f_codes",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_codes_by_country = Source{[Schema=\"staging\",Item=\"codes_by_country\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_codes_by_country,{\"country_id\", \"country\", \"cca2\", \"ccn3\", \"cca3\", \"cioc\", \"fifa\", \"status\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_car_info",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "29e3759e-86f4-4327-89dd-2d0213d2d9e4",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "89bd7d5c-98d6-43d3-9436-72f15df28919",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "side",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c2e8c047-cff4-482f-9371-7fc7ee303464",
+            "sourceColumn": "side",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "signs",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c664e8d2-6402-4aaa-bee0-2c361704db9d",
+            "sourceColumn": "signs",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0cf98636-860c-47f3-8655-b618ff5b1da9",
+        "partitions": [
+          {
+            "name": "f_car_info",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_car_info = Source{[Schema=\"staging\",Item=\"car_info\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_car_info,{\"country_id\", \"country\", \"side\", \"signs\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_capitals",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ee6c0ade-1451-48ab-89ce-0afad4ef16dc",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a179f6eb-f7e9-4e56-8a33-7719530defaf",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "capital",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "440dcfb4-4257-41ad-a1f3-f775cb3a3108",
+            "sourceColumn": "capital",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5b846e1f-c299-4433-8858-c729f50ebfde",
+            "sourceColumn": "latitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d9120010-7d71-4f84-ab28-787e40e55c73",
+            "sourceColumn": "longitude",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "c0f7624b-7452-499d-88d1-9d05336899c6",
+        "partitions": [
+          {
+            "name": "f_capitals",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_capitals = Source{[Schema=\"staging\",Item=\"capitals\"]}[Data]",
+                "in",
+                "    staging_capitals"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_borders",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bc8fda77-ce33-49ed-973c-ca291ec61969",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dd76c17f-d575-454c-938d-81321461f104",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cca3_border",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2b71a331-e2bc-4d4f-851f-9c1ac40fabe6",
+            "sourceColumn": "cca3_border",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country_border",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d26885be-d201-4b63-a849-62fa3a91a0cf",
+            "sourceColumn": "country_border",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e4a4a50d-2129-44d8-ba47-a4a8ea285b15",
+        "partitions": [
+          {
+            "name": "f_borders",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_borders_by_country = Source{[Schema=\"staging\",Item=\"borders_by_country\"]}[Data]",
+                "in",
+                "    staging_borders_by_country"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_alternative_spellings",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c2899606-0753-4de1-ba5d-fa22547f9c8b",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "alt_spellings",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eaa4e7b6-1e83-4d7c-90d5-1e69f39c97be",
+            "sourceColumn": "alt_spellings",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c274dc68-ab2c-477e-a923-700fc03a25b8",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "640fcc1b-f8e1-41a9-b2ce-d4927ffff697",
+        "partitions": [
+          {
+            "name": "f_alternative_spellings",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_alternative_spellings = Source{[Schema=\"staging\",Item=\"alternative_spellings\"]}[Data]",
+                "in",
+                "    staging_alternative_spellings"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "f_native_names",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d9a6cc65-9334-4692-b020-22432e7747b2",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "translated_official_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "63400ce0-e445-4887-bd38-f775825d79f9",
+            "sourceColumn": "translated_official_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "translated_common_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "014208df-416f-405f-a18d-2fd49a0815eb",
+            "sourceColumn": "translated_common_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "language_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4027939a-65b2-4d5e-ad77-5cfce3946c27",
+            "sourceColumn": "language_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lang_code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ca2f707a-44af-4af0-a202-e7b0aaa728bf",
+            "sourceColumn": "lang_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c2787ecf-043c-4504-8505-4e9b5e518233",
+            "sourceColumn": "country_id",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "770a2151-0b85-4bb7-8f5d-24feebfbd52f",
+        "partitions": [
+          {
+            "name": "f_native_names",
+            "mode": "import",
+            "queryGroup": "facts",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PostgreSQL.Database(\"localhost:5432\", \"countries\"),",
+                "    staging_country_native_names = Source{[Schema=\"staging\",Item=\"country_native_names\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(staging_country_native_names,{\"country\", \"translated_official_name\", \"translated_common_name\", \"language_name\", \"lang_code\", \"country_id\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

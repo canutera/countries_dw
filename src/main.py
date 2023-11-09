@@ -1,5 +1,5 @@
 from hook.countries_hook import CountriesHook
-file_format = 'parquet'
+file_format = 'csv'
 (CountriesHook()
     .parse_countries()
     .parse_tables()

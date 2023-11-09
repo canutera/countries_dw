@@ -1,0 +1,484 @@
+common_name,f,m,language_code
+Mauritania,Mauritanian,Mauritanian,eng
+Mauritania,Mauritanienne,Mauritanien,fra
+Eritrea,Eritrean,Eritrean,eng
+Eritrea,Érythréenne,Érythréen,fra
+Puerto Rico,Puerto Rican,Puerto Rican,eng
+Puerto Rico,Portoricaine,Portoricain,fra
+Romania,Romanian,Romanian,eng
+Romania,Roumaine,Roumain,fra
+Antigua and Barbuda,"Antiguan, Barbudan","Antiguan, Barbudan",eng
+Antigua and Barbuda,Antiguaise et barbudienne,Antiguaise et barbudien,fra
+Cocos (Keeling) Islands,Cocos Islander,Cocos Islander,eng
+Colombia,Colombian,Colombian,eng
+Colombia,Colombienne,Colombien,fra
+Chile,Chilean,Chilean,eng
+Chile,Chilienne,Chilien,fra
+Ghana,Ghanaian,Ghanaian,eng
+Ghana,Ghanéenne,Ghanéen,fra
+Gibraltar,Gibraltar,Gibraltar,eng
+Gibraltar,Gibraltarienne,Gibraltarien,fra
+Venezuela,Venezuelan,Venezuelan,eng
+Venezuela,Vénézuélienne,Vénézuélien,fra
+Kosovo,Kosovar,Kosovar,eng
+Kosovo,Kosovare,Kosovar,fra
+Botswana,Motswana,Motswana,eng
+Botswana,Botswanaise,Botswanais,fra
+Tanzania,Tanzanian,Tanzanian,eng
+Tanzania,Tanzanienne,Tanzanien,fra
+Montenegro,Montenegrin,Montenegrin,eng
+Montenegro,Monténégrine,Monténégrin,fra
+Comoros,Comoran,Comoran,eng
+Comoros,Comorienne,Comorien,fra
+Ivory Coast,Ivorian,Ivorian,eng
+Ivory Coast,Ivoirienne,Ivoirien,fra
+Cape Verde,Cape Verdian,Cape Verdian,eng
+Cape Verde,Cap-verdienne,Cap-verdien,fra
+Lesotho,Mosotho,Mosotho,eng
+Lesotho,Lésothienne,Lésothien,fra
+Gabon,Gabonese,Gabonese,eng
+Gabon,Gabonaise,Gabonais,fra
+Grenada,Grenadian,Grenadian,eng
+Grenada,Grenadienne,Grenadien,fra
+Jordan,Jordanian,Jordanian,eng
+Jordan,Jordanienne,Jordanien,fra
+Sweden,Swedish,Swedish,eng
+Sweden,Suédoise,Suédois,fra
+Vietnam,Vietnamese,Vietnamese,eng
+Vietnam,Vietnamienne,Vietnamien,fra
+Qatar,Qatari,Qatari,eng
+Qatar,Qatarienne,Qatarien,fra
+Brazil,Brazilian,Brazilian,eng
+Brazil,Brésilienne,Brésilien,fra
+Finland,Finnish,Finnish,eng
+Finland,Finlandaise,Finlandais,fra
+Georgia,Georgian,Georgian,eng
+Georgia,Géorgienne,Géorgien,fra
+Senegal,Senegalese,Senegalese,eng
+Senegal,Sénégalaise,Sénégalais,fra
+South Korea,South Korean,South Korean,eng
+South Korea,Sud-coréenne,Sud-coréen,fra
+Anguilla,Anguillian,Anguillian,eng
+Anguilla,Anguillane,Anguillan,fra
+São Tomé and Príncipe,Sao Tomean,Sao Tomean,eng
+São Tomé and Príncipe,Santoméenne,Santoméen,fra
+Antarctica,Antarctican,Antarctican,eng
+Antarctica,Antarcticaine,Antarcticain,fra
+Guyana,Guyanese,Guyanese,eng
+Guyana,Guyanienne,Guyanien,fra
+Nauru,Nauruan,Nauruan,eng
+Nauru,Nauruane,Nauruan,fra
+Suriname,Surinamer,Surinamer,eng
+Suriname,Surinamaise,Surinamais,fra
+Cambodia,Cambodian,Cambodian,eng
+Cambodia,Cambodgienne,Cambodgien,fra
+Curaçao,Curaçaoan,Curaçaoan,eng
+Curaçao,Curacienne,Curacien,fra
+Maldives,Maldivan,Maldivan,eng
+Maldives,Maldivienne,Maldivien,fra
+Paraguay,Paraguayan,Paraguayan,eng
+Paraguay,Paraguayenne,Paraguayen,fra
+Peru,Peruvian,Peruvian,eng
+Peru,Péruvienne,Péruvien,fra
+France,French,French,eng
+France,Française,Français,fra
+Falkland Islands,Falkland Islander,Falkland Islander,eng
+Falkland Islands,Malouinne,Malouin,fra
+Uzbekistan,Uzbekistani,Uzbekistani,eng
+Uzbekistan,Ouzbèke,Ouzbèke,fra
+Egypt,Egyptian,Egyptian,eng
+Egypt,Égyptienne,Égyptien,fra
+United States Minor Outlying Islands,American Islander,American Islander,eng
+Dominica,Dominican,Dominican,eng
+Dominica,Dominiquaise,Dominiquais,fra
+Israel,Israeli,Israeli,eng
+Israel,Israélienne,Israélien,fra
+Monaco,Monegasque,Monegasque,eng
+Monaco,Monégasque,Monégasque,fra
+Republic of the Congo,Congolese,Congolese,eng
+Republic of the Congo,Congolaise,Congolais,fra
+Ireland,Irish,Irish,eng
+Ireland,Irlandaise,Irlandais,fra
+French Southern and Antarctic Lands,French,French,eng
+French Southern and Antarctic Lands,Française,Français,fra
+Kazakhstan,Kazakhstani,Kazakhstani,eng
+Kazakhstan,Kazakhstanaise,Kazakhstanais,fra
+Malaysia,Malaysian,Malaysian,eng
+Malaysia,Malaisienne,Malaisien,fra
+United Arab Emirates,Emirati,Emirati,eng
+United Arab Emirates,Emirienne,Emirien,fra
+Czechia,Czech,Czech,eng
+Czechia,Tchèque,Tchèque,fra
+Yemen,Yemeni,Yemeni,eng
+Yemen,Yéménite,Yéménite,fra
+Myanmar,Burmese,Burmese,eng
+Myanmar,Birmane,Birman,fra
+Saint Kitts and Nevis,Kittitian or Nevisian,Kittitian or Nevisian,eng
+Saint Kitts and Nevis,Kittitienne-et-nevicienne,Kittitien-et-nevicien,fra
+United States Virgin Islands,Virgin Islander,Virgin Islander,eng
+French Polynesia,French Polynesian,French Polynesian,eng
+French Polynesia,Polynésienne,Polynésien,fra
+Fiji,Fijian,Fijian,eng
+Fiji,Fidjienne,Fidjien,fra
+Albania,Albanian,Albanian,eng
+Albania,Albanaise,Albanais,fra
+Isle of Man,Manx,Manx,eng
+Australia,Australian,Australian,eng
+Australia,Australienne,Australien,fra
+Caribbean Netherlands,Dutch,Dutch,eng
+Caribbean Netherlands,Néerlandaise,Néerlandais,fra
+Italy,Italian,Italian,eng
+Italy,Italienne,Italien,fra
+Afghanistan,Afghan,Afghan,eng
+Afghanistan,Afghane,Afghan,fra
+Kyrgyzstan,Kirghiz,Kirghiz,eng
+Kyrgyzstan,Kirghize,Kirghize,fra
+Wallis and Futuna,Wallis and Futuna Islander,Wallis and Futuna Islander,eng
+United States,American,American,eng
+United States,Américaine,Américain,fra
+Martinique,Martinican,Martinican,eng
+Martinique,Martiniquaise,Martiniquais,fra
+Philippines,Filipino,Filipino,eng
+Philippines,Philippine,Philippin,fra
+Serbia,Serbian,Serbian,eng
+Serbia,Serbe,Serbe,fra
+"Saint Helena, Ascension and Tristan da Cunha",Saint Helenian,Saint Helenian,eng
+"Saint Helena, Ascension and Tristan da Cunha",Sainte-Hélénoise,Sainte-Hélènois,fra
+British Indian Ocean Territory,Indian,Indian,eng
+Moldova,Moldovan,Moldovan,eng
+Moldova,Moldave,Moldave,fra
+Hong Kong,Hong Konger,Hong Konger,eng
+Hong Kong,Hongkongaise,Hongkongais,fra
+Pakistan,Pakistani,Pakistani,eng
+Pakistan,Pakistanaise,Pakistanais,fra
+Saudi Arabia,Saudi Arabian,Saudi Arabian,eng
+Saudi Arabia,Saoudienne,Saoudien,fra
+Angola,Angolan,Angolan,eng
+Angola,Angolaise,Angolais,fra
+New Caledonia,New Caledonian,New Caledonian,eng
+New Caledonia,Néo-Calédonienne,Néo-Calédonien,fra
+Lithuania,Lithuanian,Lithuanian,eng
+Lithuania,Lituanienne,Lituanien,fra
+Netherlands,Dutch,Dutch,eng
+Netherlands,Néerlandaise,Néerlandais,fra
+Greenland,Greenlandic,Greenlandic,eng
+Greenland,Groenlandaise,Groenlandais,fra
+Vatican City,Vatican,Vatican,eng
+Vatican City,Vaticane,Vatican,fra
+Micronesia,Micronesian,Micronesian,eng
+Micronesia,Micronésienne,Micronésien,fra
+Heard Island and McDonald Islands,Heard and McDonald Islander,Heard and McDonald Islander,eng
+Kuwait,Kuwaiti,Kuwaiti,eng
+Kuwait,Koweïtienne,Koweïtien,fra
+Switzerland,Swiss,Swiss,eng
+Switzerland,Suisse,Suisse,fra
+Saint Lucia,Saint Lucian,Saint Lucian,eng
+Saint Lucia,Saint-Lucienne,Saint-Lucien,fra
+Turks and Caicos Islands,Turks and Caicos Islander,Turks and Caicos Islander,eng
+Malta,Maltese,Maltese,eng
+Malta,Maltaise,Maltais,fra
+Tonga,Tongan,Tongan,eng
+Tonga,Tonguienne,Tonguien,fra
+Guatemala,Guatemalan,Guatemalan,eng
+Guatemala,Guatémaltèque,Guatémaltèque,fra
+Uganda,Ugandan,Ugandan,eng
+Uganda,Ougandaise,Ougandais,fra
+Guinea,Guinean,Guinean,eng
+Guinea,Guinéenne,Guinéen,fra
+American Samoa,American Samoan,American Samoan,eng
+American Samoa,Samoane,Samoan,fra
+Sint Maarten,St. Maartener,St. Maartener,eng
+Sint Maarten,Saint-Martinoise,Saint-Martinois,fra
+Nepal,Nepalese,Nepalese,eng
+Nepal,Népalaise,Népalais,fra
+Slovenia,Slovene,Slovene,eng
+Slovenia,Slovène,Slovène,fra
+British Virgin Islands,Virgin Islander,Virgin Islander,eng
+Ethiopia,Ethiopian,Ethiopian,eng
+Ethiopia,Éthiopienne,Éthiopien,fra
+Kiribati,I-Kiribati,I-Kiribati,eng
+Kiribati,Kiribatienne,Kiribatien,fra
+Guam,Guamanian,Guamanian,eng
+Togo,Togolese,Togolese,eng
+Togo,Togolaise,Togolais,fra
+Papua New Guinea,Papua New Guinean,Papua New Guinean,eng
+Papua New Guinea,Papouasienne,Papouasien,fra
+Iceland,Icelander,Icelander,eng
+Iceland,Islandaise,Islandais,fra
+Northern Mariana Islands,American,American,eng
+Northern Mariana Islands,Américaine,Américan,fra
+Austria,Austrian,Austrian,eng
+Austria,Autrichienne,Autrichien,fra
+Morocco,Moroccan,Moroccan,eng
+Morocco,Marocaine,Marocain,fra
+South Georgia,South Georgian South Sandwich Islander,South Georgian South Sandwich Islander,eng
+Iraq,Iraqi,Iraqi,eng
+Iraq,Irakienne,Irakien,fra
+Liechtenstein,Liechtensteiner,Liechtensteiner,eng
+Liechtenstein,Liechtensteinoise,Liechtensteinois,fra
+Dominican Republic,Dominican,Dominican,eng
+Dominican Republic,Dominicaine,Dominicain,fra
+Ecuador,Ecuadorean,Ecuadorean,eng
+Ecuador,Équatorienne,Équatorien,fra
+Sierra Leone,Sierra Leonean,Sierra Leonean,eng
+Sierra Leone,Sierra-leonaise,Sierra-leonais,fra
+Belize,Belizean,Belizean,eng
+Belize,Bélizienne,Bélizien,fra
+Bhutan,Bhutanese,Bhutanese,eng
+Bhutan,Bhoutanaise,Bhoutanais,fra
+Iran,Iranian,Iranian,eng
+Iran,Iranienne,Iranien,fra
+Bolivia,Bolivian,Bolivian,eng
+Bolivia,Bolivienne,Bolivien,fra
+Turkey,Turkish,Turkish,eng
+Turkey,Turque,Turc,fra
+Faroe Islands,Faroese,Faroese,eng
+Faroe Islands,Féroïenne,Féroïen,fra
+Saint Barthélemy,Saint Barthélemy Islander,Saint Barthélemy Islander,eng
+Saint Barthélemy,Barthéloméenne,Barthéloméen,fra
+Greece,Greek,Greek,eng
+Greece,Grecque,Grec,fra
+India,Indian,Indian,eng
+India,Indienne,Indien,fra
+Nicaragua,Nicaraguan,Nicaraguan,eng
+Nicaragua,Nicaraguayenne,Nicaraguayen,fra
+Central African Republic,Central African,Central African,eng
+Central African Republic,Centrafricaine,Centrafricain,fra
+DR Congo,Congolese,Congolese,eng
+DR Congo,Congolaise,Congolais,fra
+Mali,Malian,Malian,eng
+Mali,Malienne,Malien,fra
+Azerbaijan,Azerbaijani,Azerbaijani,eng
+Azerbaijan,Azerbaïdjanaise,Azerbaïdjanais,fra
+Singapore,Singaporean,Singaporean,eng
+Singapore,Singapourienne,Singapourien,fra
+Cuba,Cuban,Cuban,eng
+Cuba,Cubaine,Cubain,fra
+Bangladesh,Bangladeshi,Bangladeshi,eng
+Bangladesh,Bangladaise,Bangladais,fra
+Marshall Islands,Marshallese,Marshallese,eng
+Marshall Islands,Marshallaise,Marshallais,fra
+Latvia,Latvian,Latvian,eng
+Latvia,Lettone,Letton,fra
+Hungary,Hungarian,Hungarian,eng
+Hungary,Hongroise,Hongrois,fra
+Åland Islands,Ålandish,Ålandish,eng
+Åland Islands,Ålandaise,Ålandais,fra
+Bulgaria,Bulgarian,Bulgarian,eng
+Bulgaria,Bulgare,Bulgare,fra
+Seychelles,Seychellois,Seychellois,eng
+Seychelles,Seychelloise,Seychellois,fra
+Cameroon,Cameroonian,Cameroonian,eng
+Cameroon,Camerounaise,Camerounais,fra
+Macau,Macanese,Macanese,eng
+Macau,Macanaise,Macanais,fra
+Mexico,Mexican,Mexican,eng
+Mexico,Mexicaine,Mexicain,fra
+Brunei,Bruneian,Bruneian,eng
+Brunei,Brunéienne,Brunéien,fra
+Taiwan,Taiwanese,Taiwanese,eng
+Taiwan,Taïwanaise,Taïwanais,fra
+Aruba,Aruban,Aruban,eng
+Aruba,Arubaise,Arubais,fra
+Trinidad and Tobago,Trinidadian,Trinidadian,eng
+Trinidad and Tobago,Trinidadienne,Trinidadien,fra
+Vanuatu,Ni-Vanuatu,Ni-Vanuatu,eng
+Vanuatu,Vanuatuane,Vanuatuan,fra
+Algeria,Algerian,Algerian,eng
+Algeria,Algérienne,Algérien,fra
+Cook Islands,Cook Islander,Cook Islander,eng
+Cook Islands,Cookienne,Cookien,fra
+Burundi,Burundian,Burundian,eng
+Burundi,Burundaise,Burundais,fra
+Belarus,Belarusian,Belarusian,eng
+Belarus,Biélorusse,Biélorusse,fra
+North Korea,North Korean,North Korean,eng
+North Korea,Nord-coréenne,Nord-coréen,fra
+Saint Martin,Saint Martin Islander,Saint Martin Islander,eng
+Saint Martin,Saint-Martinoise,Saint-Martinois,fra
+Samoa,Samoan,Samoan,eng
+Samoa,Samoane,Samoan,fra
+Zimbabwe,Zimbabwean,Zimbabwean,eng
+Zimbabwe,Zimbabwéenne,Zimbabwéen,fra
+Bermuda,Bermudian,Bermudian,eng
+Bermuda,Bermudienne,Bermudien,fra
+Djibouti,Djibouti,Djibouti,eng
+Djibouti,Djiboutienne,Djiboutien,fra
+United Kingdom,British,British,eng
+United Kingdom,Britannique,Britannique,fra
+Niue,Niuean,Niuean,eng
+Niue,Niuéenne,Niuéen,fra
+Guinea-Bissau,Guinea-Bissauan,Guinea-Bissauan,eng
+Guinea-Bissau,Bissau-Guinéenne,Bissau-Guinéen,fra
+Japan,Japanese,Japanese,eng
+Japan,Japonaise,Japonais,fra
+Tuvalu,Tuvaluan,Tuvaluan,eng
+Tuvalu,Tuvaluane,Tuvaluan,fra
+Réunion,Réunionese,Réunionese,eng
+Réunion,Réunionnaise,Réunionnais,fra
+Sudan,Sudanese,Sudanese,eng
+Sudan,Soudanaise,Soudanais,fra
+North Macedonia,Macedonian,Macedonian,eng
+North Macedonia,Macédonienne,Macédonien,fra
+Canada,Canadian,Canadian,eng
+Canada,Canadienne,Canadien,fra
+Indonesia,Indonesian,Indonesian,eng
+Indonesia,Indonésienne,Indonésien,fra
+Gambia,Gambian,Gambian,eng
+Gambia,Gambienne,Gambien,fra
+Somalia,Somali,Somali,eng
+Somalia,Somalienne,Somalien,fra
+Mauritius,Mauritian,Mauritian,eng
+Mauritius,Mauricienne,Mauricien,fra
+Montserrat,Montserratian,Montserratian,eng
+Montserrat,Montserratienne,Montserratien,fra
+Russia,Russian,Russian,eng
+Russia,Russe,Russe,fra
+Portugal,Portuguese,Portuguese,eng
+Portugal,Portugaise,Portugais,fra
+Oman,Omani,Omani,eng
+Oman,Omanaise,Omanais,fra
+Christmas Island,Christmas Islander,Christmas Islander,eng
+Croatia,Croatian,Croatian,eng
+Croatia,Croate,Croate,fra
+Mongolia,Mongolian,Mongolian,eng
+Mongolia,Mongole,Mongol,fra
+Tajikistan,Tadzhik,Tadzhik,eng
+Tajikistan,Tadjike,Tadjike,fra
+Solomon Islands,Solomon Islander,Solomon Islander,eng
+Solomon Islands,Salomonienne,Salomonien,fra
+Haiti,Haitian,Haitian,eng
+Haiti,Haïtienne,Haïtien,fra
+Honduras,Honduran,Honduran,eng
+Honduras,Hondurienne,Hondurien,fra
+Namibia,Namibian,Namibian,eng
+Namibia,Namibienne,Namibien,fra
+Argentina,Argentine,Argentine,eng
+Argentina,Argentine,Argentin,fra
+Niger,Nigerien,Nigerien,eng
+Niger,Nigérienne,Nigérien,fra
+Timor-Leste,East Timorese,East Timorese,eng
+Timor-Leste,Est-timoraise,Est-timorais,fra
+Western Sahara,Sahrawi,Sahrawi,eng
+Uruguay,Uruguayan,Uruguayan,eng
+Uruguay,Uruguayenne,Uruguayen,fra
+Barbados,Barbadian,Barbadian,eng
+Barbados,Barbadienne,Barbadien,fra
+Guernsey,Channel Islander,Channel Islander,eng
+Guernsey,Guernesiaise,Guernesiais,fra
+Estonia,Estonian,Estonian,eng
+Estonia,Estonienne,Estonien,fra
+Kenya,Kenyan,Kenyan,eng
+Kenya,Kényane,Kényan,fra
+Jamaica,Jamaican,Jamaican,eng
+Jamaica,Jamaïcaine,Jamaïcain,fra
+Luxembourg,Luxembourger,Luxembourger,eng
+Luxembourg,Luxembourgeoise,Luxembourgeois,fra
+Guadeloupe,Guadeloupian,Guadeloupian,eng
+Guadeloupe,Guadeloupéenne,Guadeloupéen,fra
+Tunisia,Tunisian,Tunisian,eng
+Tunisia,Tunisienne,Tunisien,fra
+Cayman Islands,Caymanian,Caymanian,eng
+Cayman Islands,Caïmanienne,Caïmanien,fra
+Mozambique,Mozambican,Mozambican,eng
+Mozambique,Mozambicaine,Mozambicain,fra
+Tokelau,Tokelauan,Tokelauan,eng
+Germany,German,German,eng
+Germany,Allemande,Allemand,fra
+Liberia,Liberian,Liberian,eng
+Liberia,Libérienne,Libérien,fra
+Pitcairn Islands,Pitcairn Islander,Pitcairn Islander,eng
+Pitcairn Islands,Pitcairnaise,Pitcairnais,fra
+Saint Pierre and Miquelon,"Saint-Pierrais, Miquelonnais","Saint-Pierrais, Miquelonnais",eng
+Saint Pierre and Miquelon,"Saint-Pierraise, Miquelonaise","Saint-Pierrais, Miquelonais",fra
+South Sudan,South Sudanese,South Sudanese,eng
+South Sudan,Sud-Soudanaise,Sud-Soudanais,fra
+Slovakia,Slovak,Slovak,eng
+Slovakia,Slovaque,Slovaque,fra
+Palau,Palauan,Palauan,eng
+Palau,Paluane,Paluan,fra
+Cyprus,Cypriot,Cypriot,eng
+Cyprus,Chypriote,Chypriote,fra
+Libya,Libyan,Libyan,eng
+Libya,Libyenne,Libyen,fra
+Mayotte,Mahoran,Mahoran,eng
+Mayotte,Mahoraise,Mahorais,fra
+Turkmenistan,Turkmen,Turkmen,eng
+Turkmenistan,Turkmène,Turkmène,fra
+Equatorial Guinea,Equatorial Guinean,Equatorial Guinean,eng
+Equatorial Guinea,Équato-guinéenne,Équato-guinéen,fra
+Nigeria,Nigerian,Nigerian,eng
+Nigeria,Nigériane,Nigérian,fra
+Norway,Norwegian,Norwegian,eng
+Norway,Norvégienne,Norvégien,fra
+Bosnia and Herzegovina,"Bosnian, Herzegovinian","Bosnian, Herzegovinian",eng
+Bosnia and Herzegovina,Bosnienne,Bosnien,fra
+South Africa,South African,South African,eng
+South Africa,Sud-africaine,Sud-africain,fra
+Denmark,Danish,Danish,eng
+Denmark,Danoise,Danois,fra
+Laos,Laotian,Laotian,eng
+Laos,Laotienne,Laotien,fra
+Madagascar,Malagasy,Malagasy,eng
+Madagascar,Malgache,Malgache,fra
+El Salvador,Salvadoran,Salvadoran,eng
+El Salvador,Salvadorienne,Salvadorien,fra
+Andorra,Andorran,Andorran,eng
+Andorra,Andorrane,Andorran,fra
+Sri Lanka,Sri Lankan,Sri Lankan,eng
+Sri Lanka,Sri-lankaise,Sri-lankais,fra
+Rwanda,Rwandan,Rwandan,eng
+Rwanda,Rwandaise,Rwandais,fra
+Armenia,Armenian,Armenian,eng
+Armenia,Arménienne,Arménien,fra
+Chad,Chadian,Chadian,eng
+Chad,Tchadienne,Tchadien,fra
+Benin,Beninese,Beninese,eng
+Benin,Béninoise,Béninois,fra
+Syria,Syrian,Syrian,eng
+Syria,Syrienne,Syrien,fra
+Spain,Spanish,Spanish,eng
+Spain,Espagnole,Espagnol,fra
+Thailand,Thai,Thai,eng
+Thailand,Thaïlandaise,Thaïlandais,fra
+Svalbard and Jan Mayen,Norwegian,Norwegian,eng
+Ukraine,Ukrainian,Ukrainian,eng
+Ukraine,Ukrainienne,Ukrainien,fra
+China,Chinese,Chinese,eng
+China,Chinoise,Chinois,fra
+Malawi,Malawian,Malawian,eng
+Malawi,Malawienne,Malawien,fra
+Panama,Panamanian,Panamanian,eng
+Panama,Panaméenne,Panaméen,fra
+Bahrain,Bahraini,Bahraini,eng
+Bahrain,Bahreïnienne,Bahreïnien,fra
+Saint Vincent and the Grenadines,Saint Vincentian,Saint Vincentian,eng
+Saint Vincent and the Grenadines,Vincentaise,Vincentais,fra
+Jersey,Channel Islander,Channel Islander,eng
+Jersey,Jersiaise,Jersiais,fra
+Burkina Faso,Burkinabe,Burkinabe,eng
+Burkina Faso,Burkinabée,Burkinabé,fra
+Poland,Polish,Polish,eng
+Poland,Polonaise,Polonais,fra
+Belgium,Belgian,Belgian,eng
+Belgium,Belge,Belge,fra
+Bahamas,Bahamian,Bahamian,eng
+Bahamas,Bahamienne,Bahamien,fra
+Costa Rica,Costa Rican,Costa Rican,eng
+Costa Rica,Costaricaine,Costaricain,fra
+San Marino,Sammarinese,Sammarinese,eng
+San Marino,Saint-Marinaise,Saint-Marinais,fra
+New Zealand,New Zealander,New Zealander,eng
+New Zealand,Neo-Zélandaise,Neo-Zélandais,fra
+French Guiana,Guianan,Guianan,eng
+French Guiana,Guyanaise,Guyanais,fra
+Norfolk Island,Norfolk Islander,Norfolk Islander,eng
+Norfolk Island,Norfolkaise,Norfolkais,fra
+Lebanon,Lebanese,Lebanese,eng
+Lebanon,Libanaise,Libanais,fra
+Zambia,Zambian,Zambian,eng
+Zambia,Zambienne,Zambien,fra
+Eswatini,Swazi,Swazi,eng
+Eswatini,Swazie,Swazie,fra
+Palestine,Palestinian,Palestinian,eng
+Palestine,Palestinienne,Palestinien,fra

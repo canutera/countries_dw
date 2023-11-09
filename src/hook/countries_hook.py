@@ -1,8 +1,8 @@
 import requests
 import json
 import pandas as pd
-from parser.country import Country
-
+from src.parser.country import Country
+from os.path import join 
 
 class CountriesHook:
     '''
@@ -115,17 +115,33 @@ class CountriesHook:
             setattr(self, table, pd.concat([getattr(country, table) for country in self.countries], ignore_index=True))
         return self
 
-    def save_tables(self, format:str, **save_kwargs):
-        '''save parsed tables to a format available for saving in pd.DataFrame'''
+    def save_tables(self, format:str, destination:str=None, **save_kwargs):
+        '''save parsed tables to a format available for saving in pd.DataFrame
+        
+        Parameters
+        ----------
+        format: str
+            Format for saving files in specific path
+        destination: str
+            Destination path for files. If path is None, it will be saved in data folder at root of this project
+        **save_kwargs
+            Any other kwarg used in pandas method for saving files
+
+        '''
         for table in self.tables:
+            if not destination: 
+                path = join('data', f'{table}.{format}')
+            else:
+                path = join(destination, f'{table}.{format}')
+
             df = getattr(self, table)
             try:
                 if format in ['xlsx', 'xls', 'xlsm']: 
                     save_method = getattr(df, 'to_excel') 
-                    save_method(f'data/{table}.xlsx', **save_kwargs)
+                    save_method(path, **save_kwargs)
                 else:
                     save_method = getattr(df, f'to_{format}') 
-                    save_method(f'data/{table}.{format}', **save_kwargs)
+                    save_method(path, **save_kwargs)
             except AttributeError:
                 raise AttributeError(f"to_{format} not implemented for pandas.DataFrame")
         return self

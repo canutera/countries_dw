@@ -1,0 +1,1150 @@
+version: 2
+
+models:
+
+  - name: countries
+    description: List of names of a country
+
+    # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+    columns:
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: primary_key
+          - type: check
+            expression: "country_id > 0"
+
+      - name: common_name
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: unique
+          - type: not_null
+        
+
+      - name: official_name
+        description: Official name of country as reffered in international solemnities
+        data_type: text
+        constraints:
+          - type: not_null
+        
+      - name: latitude
+        description: latitude coordinate
+        data_type: decimal
+        constraints:
+          - type: not_null
+
+      - name: longitude
+        description: longitude coordinate
+        data_type: decimal
+        constraints:
+          - type: not_null
+
+  - name: languages_table
+    description: List of official languages
+     # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+    columns:
+
+      - name: lang_code
+        description: Language code
+        data_type: text
+        constraints:
+          - type: primary_key
+          
+          
+      - name: language_name
+        description: Name of Language in English
+        data_type: text
+        constraints:
+          - type: not_null
+
+  - name: languages_by_country
+     # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+
+    description: List of official languages for every country
+    columns:
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+            
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: lang_code
+        description: Language code
+        data_type: text
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.languages_table (lang_code)"
+          
+      - name: language_name
+        description: Name of Language in English
+        data_type: text
+        constraints:
+          - type: not_null
+ 
+  - name: country_native_names
+    description: List of native names of country
+
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    database: countries
+    schema: staging
+    columns:
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: translated_official_name
+        description: Official name of country as reffered in international solemnities translated in language code specified.
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: translated_common_name
+        description: Common name of country as referred by natives translated in language code specified.
+        data_type: text
+        constraints:
+          - type: not_null
+
+      - name: language_name
+        description: Language of native name
+        data_type: text
+        constraints:
+          - type: not_null
+      
+      - name: lang_code
+        description: Language code of native name
+        data_type: text
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.languages_table (lang_code)"
+      
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+
+  - name: codes_by_country
+    description: List of codes a country is referred to
+    # required for constraint
+    config:
+      contract:
+        enforced: true
+    database: countries
+    schema: staging
+
+    columns:
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+        
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null
+          
+
+      - name: cca2
+        description: ISO 3166-1 alpha-2 two-letter country codes
+        data_type: varchar(2)
+        constraints:
+          - type: not_null
+
+      - name: ccn3
+        description: ISO 3166-1 numeric code (UN M49)
+        data_type: varchar(3)
+        
+
+      - name: cca3
+        description: ISO 3166-1 alpha-3 three-letter country codes
+        data_type: varchar(3)
+        constraints:
+          - type: not_null
+
+      - name: cioc
+        description: Code of the International Olympic Committee
+        data_type: varchar(3)
+        
+
+      - name: fifa
+        description: FIFA code
+        data_type: varchar(3)
+        
+
+      - name: status
+        description: ISO 3166-1 assignment status
+        data_type: text
+        constraints:
+          - type: not_null
+
+  - name: alternative_spellings
+    description: 'Details on countries aliases'
+    # required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country
+        description: Common name of country as referred by natives
+        data_type: text
+        constraints:
+          - type: not_null      
+
+      - name: alt_spellings  
+        description: 'Alternative spelling for the common name' 
+        data_type: VARCHAR(255)
+        constraints:
+          - type: not_null      
+
+      - name: country_id
+        description: Unique id (integer) from country
+        data_type: int
+        constraints:
+          - type: not_null
+          - type: foreign_key
+            expression: "staging.countries (country_id)"
+
+  - name: regions_and_continents
+    description: 'Dimension table on regions, subregions and continents'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: region_id
+        description: Unique id for a region
+        data_type: int
+        constraints:
+          - type: primary_key  
+
+      - name: continent
+        description: Name of continent 
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: region
+        description: Name of region
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: subregion
+        description: Name of subregion
+        data_type: text
+        constraints:
+          - type: not_null   
+
+  - name: regions_and_continents_by_country
+    description: 'Details on regions, subregions and continents for countries'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: continent
+        description: Name of continent 
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: region
+        description: Name of region
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: subregion
+        description: Name of subregion
+        data_type: text
+        constraints:
+          - type: not_null   
+
+      - name: region_id
+        description: Unique region id for country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.regions_and_continents (region_id)" 
+
+  - name: borders_by_country
+    description: 'Details on border for each country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: cca3_border
+        description: Alpha3 code for border country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: country_border
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+  - name: capitals
+    description: 'Details on capitals for each country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: capital
+        description: Name of capital
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: latitude
+        description: latitude coordinates of capital
+        data_type: decimal
+        constraints:
+          - type: not_null  
+      
+      - name: longitude
+        description: latitude coordinates of capital
+        data_type: decimal
+        constraints:
+          - type: not_null  
+
+  - name: idds_by_country
+    description: 'Details on International direct dialing codes'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null  
+
+      - name: root
+        description: Root for idd
+        data_type: text
+        
+
+      - name: suffixes
+        description: Suffix for idd
+        data_type: text
+  
+  - name: currencies_by_country
+    description: 'Details on currencies'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Unique id for a country
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: currency_code
+        description: Alpha 3 code for currency
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: currency_name
+        description: Name of currency in english
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: symbol
+        description: Symbol used to represent currency
+        data_type: text
+        
+  - name: flags_and_coat_of_arms
+    description: 'How citizens are called for each country'
+    #required for constraint
+    # config:
+    #   contract:
+    #     enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: flag_description
+        description: Visual description of flag
+        data_type: text
+
+      - name: png_flag
+        description: png image link to flag
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: svg_flag
+        description: svg image link to flag
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: png_coarms
+        description: png image link to coat of arms
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: svg_coarms
+        description: svg image link to coat of arms
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: demonyms_by_country
+    description: 'List with flag and coat of arms links to png and svg formats'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null     
+        
+      - name: demonym
+        description: demonym in english
+        data_type: text
+        constraints:
+          - type: not_null     
+
+  - name: map_links
+    description: 'Links to google maps and open street maps by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null     
+      
+      - name: open_street_maps
+        description: Open street maps link to country
+        data_type: text
+        constraints:
+          - type: not_null     
+
+      - name: google_maps
+        description: Google maps link to country
+        data_type: text
+        constraints:
+          - type: not_null     
+
+  - name: car_info
+    description: 'Side of driving and signs info by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: side
+        description: Side of road that cars drive
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: signs
+        description: Signs format
+        data_type: text
+       
+  - name: translated_names
+    description: 'Side of driving and signs info by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: official
+        description: official name translated
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: common
+        description: common name translated
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: language_code
+        description: common name translated
+        data_type: text
+        constraints:
+          - type: foreign_key
+            expression: "staging.languages_table (lang_code)" 
+      
+      - name: language_name
+        description: name of language that names are translated
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: domains
+    description: 'Top level domains for each country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: tld
+        description: top level domains assigned for country
+        data_type: text
+        constraints:
+          - type: not_null 
+  
+  - name: timezones_by_country
+    description: 'Timezone info by country'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+      
+      - name: timezones
+        description: timezone info
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: independency_un_membership
+    description: 'Information on independency status and United Nations Membership'
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: independent
+        description: independency status
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: 'unMember'
+        description: Un membership status
+        data_type: text
+        constraints:
+          - type: not_null 
+
+  - name: gini_index_by_country
+    description: "The Gini index, or Gini co-efficient, measures income distribution across a population. 
+    
+    Developed by Italian statistician Corrado Gini in 1912, it often serves as a gauge of economic inequality, 
+    measuring income distribution or, less commonly, wealth distribution among a population.
+    
+    The co-efficient ranges from 0 (or 0%) to 1 (or 100%), with 0 representing perfect equality and 1 representing perfect inequality. 
+    Values greater than 1 are theoretically possible due to negative income or wealth."
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: year
+        description: year for gini index
+        data_type: int
+        constraints:
+          - type: not_null 
+
+      - name: index
+        description: value of gini index
+        data_type: decimal
+        constraints:
+          - type: not_null 
+
+  - name: general_infos
+    description: 'General information about country. Contains '
+    #required for constraint
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: country_id
+        description: Unique id for a country
+        data_type: int
+        constraints:
+          - type: foreign_key  
+            expression: "staging.countries (country_id)"
+      
+      - name: country
+        description: Country Name
+        data_type: text
+        constraints:
+          - type: not_null 
+
+      - name: flag_emoji
+        description: Flag emoji of country
+        data_type: text
+        constraints:
+          - type: not_null 
+          
+      - name: area
+        description: Geographical size (unit not informed)
+        data_type: decimal
+        constraints:
+          - type: not_null 
+
+      - name: landlocked
+        description: If country has access to sea
+        data_type: boolean
+        constraints:
+          - type: not_null 
+
+      - name: population
+        description: Size of population
+        data_type: int
+        constraints:
+          - type: not_null 
+
+      - name: start_of_week
+        description: Day considered start of week 
+        data_type: TEXT
+        constraints:
+          - type: not_null 
+
+
+#### raw sources
+sources:
+  - name: raw
+    description: raw data recieved from countries api
+    database: countries
+    schema: raw
+    tables: 
+
+      - name: alt_spellings
+        description: 'Details on countries aliases'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+
+          - name: altSpellings  
+            description: 'Alternative spelling for the common name'
+        
+      - name: borders
+        description: 'Relation of countries a given country borders with.'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+
+          - name: borders  
+            description: 'code for country in alpha-3'
+
+      - name: capital
+        description: 'Details of the capital of the country'
+        columns:
+          - name: common_name
+            description: 'Common name of country as referred by natives'
+
+          - name: capital
+            description: Name of capital of the country
+
+          - name: latitude
+            description: Latitude coordinates of the capital
+
+          - name: longitude
+            description: Longitude coordinates of the capital
+
+      - name: car_information
+        description: 'Information about driving in a country'
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: side
+            description: Which side of street cars drive in a country
+
+          - name: signs
+            description: Car distinguised (oval) signs
+
+      - name: coat_of_arms
+        description: MainFacts.com links to svg and png images
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: image_format
+            description: Image format of coat of arms picture
+
+          - name: link
+            description: link to coat of arms image
+
+      - name: codes
+        description: List of codes a country is referred to
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: cca2
+            description: ISO 3166-1 alpha-2 two-letter country codes
+
+          - name: ccn3
+            description: ISO 3166-1 numeric code (UN M49)
+
+          - name: cca3
+            description: ISO 3166-1 alpha-3 three-letter country codes
+
+          - name: cioc
+            description: Code of the International Olympic Committee
+
+          - name: fifa
+            description: FIFA code
+
+          - name: status
+            description: ISO 3166-1 assignment status
+
+      - name: continents
+        description: List of continents the country is on
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: continents
+            description: List of continents the country is on
+
+      - name: currencies
+        description: List of all currencies
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+
+          - name: name
+            description: Name of currency
+
+          - name: symbol
+            description: Symbol of currency
+
+          - name: currency_code
+            description: Code of currency
+
+      - name: demonyms
+        description: How Inhabitants of the country of country are referred as
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: f
+            description: female demonym for country
+
+          - name: m
+            description: male demonym for country
+
+          - name: language_code
+            description: language code for denomym (which idiom is written)
+
+      - name: flags
+        description: Flagpedia links to svg and png flags
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: image_format
+            description: Image format of flag picture
+
+          - name: link
+            description: Link to the svg flag on Flagpedia
+
+      - name: general_information
+        description: Miscellaneous information about country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: landlocked
+            description: If country does not has access to sea 
+
+          - name: area
+            description: Geographical size of country
+
+          - name: flag
+            description: flag emoji
+
+          - name: population
+            description: Value of population in country
+
+          - name: startOfWeek
+            description: When week starts in country
+
+      - name: gini_index
+        description: Worldbank Gini index
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: year
+            description: year of gini index value
+
+          - name: index
+            description: Worldbank Gini index value
+
+      - name: idds
+        description: International dialing codes of country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: root
+            description: root for idd
+
+          - name: suffixes
+            description: suffixes for idd 
+
+      - name: independency_table
+        description: List of ISO 3166-1 independence status
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: independent
+            description: ISO 3166-1 independence status (the country is considered a sovereign state)
+
+      - name: languages
+        description: List of official languages
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: lang_code
+            description: Language code
+
+          - name: lang
+            description: Name of Language in English
+
+      - name: lat_lng
+        description: List of Latitude and longitude of country 
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: latitude
+            description: Latitude coordinates of country
+
+          - name: longitude
+            description: Longitude coordinates of country
+
+      - name: maps
+        description: List of Link to Google maps and Open Street maps
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: site
+            description: Site of map
+
+          - name: link
+            description: Link to Google maps and Open Street maps
+
+      - name: names
+        description: List of names of a country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: official_name
+            description: Official name of country as reffered in international solemnities
+
+      - name: native_names
+        description: List of native names of country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: official
+            description: Official name of country as reffered in international solemnities translated in language code specified.
+
+          - name: common
+            description: Common name of country as referred by natives translated in language code specified.
+
+          - name: language_code
+            description: Language code of native name
+
+      - name: postal_codes
+        description: List of Country postal codes
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: format
+            description: Format for postal code in country
+
+          - name: regex
+            description: Regular expression to find postal code inside a text
+
+      - name: regions
+        description: Information about region of country
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: region
+            description: Region of country
+
+          - name: subregion
+            description: Subregion of country
+
+      - name: timezones
+        description: List of timezones 
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: timezones
+            description: Timezone region inside de country
+
+      - name: top_level_domains
+        description: List of Internet top level domains
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: tld
+            description: Top level domain in country
+
+      - name: translations
+        description: List of country name translations
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: official
+            description: Official name of country as reffered in international solemnities translated in language code specified.
+
+          - name: common
+            description: Common name of country as referred by natives translated in language code specified.
+
+          - name: language_code
+            description: Language code of translation
+
+      - name: un_membership_table
+        description: List of UN Member status 
+        columns:
+          - name: common_name
+            description: Common name of country as referred by natives
+
+          - name: unMember
+            description: UN Member status

@@ -1,0 +1,310 @@
+version: 2
+
+seeds:
+  - name: alt_spellings
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types: 
+        common_name: varchar(50)
+        altSpellings: varchar(255)
+      
+        
+
+  - name: borders
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        borders: varchar(3)
+
+  - name: capital
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        capital: varchar(50)
+        latitude: decimal(5,2)
+        longitude: decimal(5,2)
+      
+  - name: car_information
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        side: varchar(5)
+        signs: varchar(3)
+        
+  - name: codes
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        cca2: varchar(2)
+        ccn3: varchar(3)
+        cca3: varchar(3)
+        cioc: varchar(3)
+        fifa: varchar(3)
+        status: varchar(20)
+
+  - name: currencies
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        name: varchar(50)
+        symbol: varchar(6)
+        currency_code: varchar(3)
+       
+  - name: demonyms
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        f: varchar(40)
+        m: varchar(40)
+        language_code: varchar(3)
+
+  - name: maps
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        site: varchar(50)
+        link: varchar(255)
+
+  - name: gini_index
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        year	: smallint
+        link: decimal(5,2)
+        
+  - name: timezones
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        timezones	: varchar(9)
+
+  - name: flags
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        image_format	: varchar(3)
+        link: varchar(600)
+
+  - name: coat_of_arms
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        image_format	: varchar(3)
+        link: varchar(100)
+
+  - name: postal_codes
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        format	: varchar(60)
+        link: varchar(160)
+
+  - name: names
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        official_name	: varchar(100)
+
+  - name: native_names
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        official	: varchar(100)
+        common	: varchar(50)
+        language_code	: varchar(3)
+        
+  - name: top_level_domains
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        tld: varchar(15)
+
+  - name: independency_table
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        independent: varchar(1)
+
+  - name: un_membership_table
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        unMember: varchar(1)
+
+  - name: idds
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        root: varchar(2)
+        suffixes: varchar(10)
+
+  - name: regions
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        region: varchar(20)
+        subregion: varchar(30)
+
+  - name: languages
+    
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        lang_code: varchar(3)
+        lang: varchar(40)
+
+  - name: translations
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        official: varchar(100)
+        common: varchar(100)
+        lang_code: varchar(3)
+
+  - name: lat_lng
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        latitude: decimal(10,6)
+        longitude: decimal(10,6)
+
+  - name: general_information
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        landlocked: boolean
+        area: numeric
+        flag: varchar(2)
+        population: integer
+        startOfWeek: varchar(8)
+        
+  - name: continents
+    config:
+      enabled: true
+      docs:
+        show: false
+      database: countries
+      schema: raw
+      column_types:
+        common_name: varchar(50)
+        continents: varchar(15)
+        
